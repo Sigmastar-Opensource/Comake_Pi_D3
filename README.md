@@ -45,9 +45,9 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 
 #### 1.3.1 开发板接口
 
-![主板接口](mymedia/Comake_Pi_D3_QuickStart/board-main.svg)
+![主板接口](mymedia/board-main.svg)
 
-![底板接口](mymedia/Comake_Pi_D3_QuickStart/board-base.svg)
+![底板接口](mymedia/board-base.svg)
 
 ---
 
@@ -86,11 +86,11 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 
 - 邮箱：注册 Comake 账号时用到的邮箱
 
-    ![](mymedia/Comake_Pi_D3_QuickStart/login.png)
+    ![](mymedia/login.png)
 
 - Token：在 “HTTP 凭据” 界面点击 “获取下载凭证” 按钮生成
 
-    ![](mymedia/Comake_Pi_D3_QuickStart/git-key.png)
+    ![](mymedia/git-key.png)
 
 ### 2.3 配置 Git 环境
 
@@ -329,7 +329,7 @@ bash D3_linux_setup.sh build-image
 
 ### 6.1 硬件接线
 
-<img src="mymedia/Comake_Pi_D3_QuickStart/board-connect.png" style="zoom: 35%">
+<img src="mymedia/board-connect.png" style="zoom: 35%">
 
 1. 开发板 CONV1 12V DC 电源接口接入 DC 12V 电源适配器。
 2. 将双公头 USB 数据线一端接入开发板 CONU8 USB2.0 接口（黑色），另一端接入 PC。
@@ -362,18 +362,18 @@ bash D3_linux_setup.sh build-image
 
 打开 "UsbDevelopToolUI.exe" --> "固件升级"，选中 `SourceCode/project/image/output/images/UsbUpgradePackage` 下生成的 `SgsUsbUpgrade.bin`，点击 "开始升级"。
 
-![固件升级](mymedia/Comake_Pi_D3_QuickStart/full.png)
+![固件升级](mymedia/full.png)
 
 ### 6.4 单分区升级
 
 1. 打开 “UsbDevelopToolUI.exe” --> “高级”，解包原固件。
 
-    ![](mymedia/Comake_Pi_D3_QuickStart/advanced.png)
+    ![](mymedia/advanced.png)
 
 2. 替换 UsbDevToolImage 目录中的分区文件。
 3. 切换到工具的 “单分区” 界面，选择设备，浏览解包目录下的 package.ini，勾选要升级的分区，再点击 “开始升级”。
 
-    ![](mymedia/Comake_Pi_D3_QuickStart/single.png)
+    ![](mymedia/single.png)
 
 ### 6.5 验证
 
@@ -434,7 +434,7 @@ git clone https://git.sigmastar.com.cn:9090/<namespace>/<repo-name>.git
 
 如果不想使用 Git 命令行，可直接下载代码压缩包：进入仓库页面，点击「...」→ 选择 下载ZIP 或 下载TAR.GZ。
 
-![下载压缩包](mymedia/Comake_Pi_D3_QuickStart/gitweb-download.png)
+![下载压缩包](mymedia/gitweb-download.png)
 
 ### 7.5 更新本地代码
 
@@ -458,7 +458,7 @@ git pull
 2. 点击顶部「议题」选项卡
 3. 点击「创建议题」
 
-    ![创建议题](mymedia/Comake_Pi_D3_QuickStart/gitweb-issue-1.png)
+    ![创建议题](mymedia/gitweb-issue-1.png)
 
 4. 填写议题
 
@@ -467,7 +467,7 @@ git pull
 
 5. 点击「创建议题」确认按钮
 
-    ![创建议题](mymedia/Comake_Pi_D3_QuickStart/gitweb-issue-2.png)
+    ![创建议题](mymedia/gitweb-issue-2.png)
 
 #### 7.6.2 议题描述模板
 
