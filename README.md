@@ -17,7 +17,7 @@ Git Web 是 Sigmastar 对外提供的代码托管平台。
 
 **账号体系**：
 
-Git Web 平台的账号与 Sigmastar Comake 社区（https://www.comake.online）打通，用户需先注册 Comake 社区账号后方可登录 Git Web。
+Git Web 平台的账号与 Sigmastar Comake 社区（`https://www.comake.online`）打通，用户需先注册 Comake 社区账号后方可登录 Git Web。
 
 > **注意**：本平台为对外只读平台，**不支持用户创建个人仓库或直接提交代码**。
 
@@ -194,8 +194,8 @@ Linux SDK 提供精简的 64-bit Linux 系统（无桌面），适合产品化�
 | `bash D3_linux_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
 | `bash D3_linux_setup.sh sdk` | 下载最新版本 SDK 源码 |
 | `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
-| `bash D3_linux_setup.sh image` | 下载最新版本 烧录固件 |
-| `bash D3_linux_setup.sh image <version>` | 下载指定版本 烧录固件 |
+| `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
+| `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
 | `bash D3_linux_setup.sh tools` | 下载全部工具 |
 | `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
 | `bash D3_linux_setup.sh model-zoo` | 下载最新版本算法模型库 |
@@ -274,7 +274,7 @@ SourceCode/
 │   └── Makefile         #   内核编译入口
 │
 ├── project/             # 编译工程入口
-│   ├── board/           #   板级配置（mhera/D3 等）
+│   ├── board/           #   板级配置
 │   ├── configs/         #   defconfig 配置文件
 │   ├── image/           #   镜像打包脚本与输出
 │   ├── kbuild/          #   内核编译集成
@@ -308,7 +308,7 @@ SourceCode/
 # 构建 Ubuntu 根文件系统
 bash D3_debian_setup.sh build-rootfs
 
-# 编译 Debian 系统镜像
+# 编译 64-bit Ubuntu 系统镜像
 bash D3_debian_setup.sh build-image
 ```
 
@@ -394,7 +394,7 @@ bash D3_linux_setup.sh build-image
 
 ### 7.1 登录 Git Web
 
-1. 打开浏览器，访问 `https://git.sigmastar.com.cn:9090/user/login`
+1. 打开浏览器，访问 [Git Web](https://git.sigmastar.com.cn:9090/user/login)
 
 2. 输入登录凭据
 

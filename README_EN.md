@@ -17,7 +17,7 @@ Git Web is the code hosting platform provided externally by Sigmastar.
 
 **Account system:**
 
-The Git Web platform's accounts are integrated with the Sigmastar Comake community (https://www.comake.online). Users must first register a Comake community account before they can log in to Git Web.
+The Git Web platform's accounts are integrated with the Sigmastar Comake community (`https://www.comake.online`). Users must first register a Comake community account before they can log in to Git Web.
 
 > **Note**: This platform is read-only for external users and **does not support creating personal repositories or directly committing code**.
 
@@ -275,7 +275,7 @@ SourceCode/
 │   └── Makefile         #   Kernel build entry point
 │
 ├── project/             # Build project entry point
-│   ├── board/           #   Board configuration (mhera/D3, etc.)
+│   ├── board/           #   Board configuration
 │   ├── configs/         #   defconfig configuration files
 │   ├── image/           #   Image packaging scripts and output
 │   ├── kbuild/          #   Kernel build integration
@@ -309,7 +309,7 @@ After the download completes, use the script to build with one click:
 # Build the Ubuntu root filesystem
 bash D3_debian_setup.sh build-rootfs
 
-# Build the Debian system image
+# Build the 64-bit Ubuntu system image
 bash D3_debian_setup.sh build-image
 ```
 
@@ -395,7 +395,7 @@ Open "UsbDevelopToolUI.exe" --> "Firmware Upgrade", select the `SgsUsbUpgrade.bi
 
 ### 7.1 Log In to Git Web
 
-1. Open a browser and visit `https://git.sigmastar.com.cn:9090/user/login`
+1. Open a browser and visit [Git Web](https://git.sigmastar.com.cn:9090/user/login)
 
 2. Enter your login credentials
 
