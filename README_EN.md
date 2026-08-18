@@ -120,31 +120,6 @@ cd download_scripts
 
 The Debian SDK provides a complete Ubuntu desktop experience, suitable for beginners, desktop interaction, and multimedia playback scenarios.
 
-**Command reference:**
-
-| Command | Description |
-|---------|-------------|
-| `bash D3_debian_setup.sh all` | One-click download of all resources for the latest version |
-| `bash D3_debian_setup.sh all <version>` | One-click download of all resources for a specified version |
-| `bash D3_debian_setup.sh docker` | Download the latest Docker image |
-| `bash D3_debian_setup.sh docker <version>` | Download the Docker image for a specified version |
-| `bash D3_debian_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
-| `bash D3_debian_setup.sh sdk` | Download the latest SDK source code |
-| `bash D3_debian_setup.sh sdk <version>` | Download the SDK source code for a specified version |
-| `bash D3_debian_setup.sh tools` | Download all tools |
-| `bash D3_debian_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_debian_setup.sh model-zoo` | Download the latest algorithm model library |
-| `bash D3_debian_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
-| `bash D3_debian_setup.sh docs` | Download the latest documentation |
-| `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
-| `bash D3_debian_setup.sh hw-ref-design` | Download hardware reference design materials |
-| `bash D3_debian_setup.sh list-version` | View available version numbers |
-| `bash D3_debian_setup.sh list-tools` | View the list of available tools |
-| `bash D3_debian_setup.sh build-rootfs` | Build the latest Ubuntu root filesystem |
-| `bash D3_debian_setup.sh build-rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
-| `bash D3_debian_setup.sh build-image` | Build the latest system image |
-| `bash D3_debian_setup.sh build-image <version>` | Build the system image for a specified version |
-
 **Quick start:**
 
 ```bash
@@ -180,36 +155,34 @@ Directory structure after running `all`:
     └── ...
 ```
 
-### 3.3 Linux SDK
-
-The Linux SDK provides a streamlined 64-bit Linux system (no desktop), suitable for productization deployment, resource-constrained scenarios, or cases where a graphical interface is not needed. The Linux SDK also supports directly downloading precompiled firmware images, with no local compilation required.
-
 **Command reference:**
 
 | Command | Description |
 |---------|-------------|
-| `bash D3_linux_setup.sh all` | One-click download of all resources for the latest version |
-| `bash D3_linux_setup.sh all <version>` | One-click download of all resources for a specified version |
-| `bash D3_linux_setup.sh docker` | Download the latest Docker image |
-| `bash D3_linux_setup.sh docker <version>` | Download the Docker image for a specified version |
-| `bash D3_linux_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
-| `bash D3_linux_setup.sh sdk` | Download the latest SDK source code |
-| `bash D3_linux_setup.sh sdk <version>` | Download the SDK source code for a specified version |
-| `bash D3_linux_setup.sh image` | Download the latest firmware image for flashing |
-| `bash D3_linux_setup.sh image <version>` | Download the firmware image for a specified version |
-| `bash D3_linux_setup.sh tools` | Download all tools |
-| `bash D3_linux_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_linux_setup.sh model-zoo` | Download the latest algorithm model library |
-| `bash D3_linux_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
-| `bash D3_linux_setup.sh docs` | Download the latest documentation |
-| `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
-| `bash D3_linux_setup.sh hw-ref-design` | Download hardware reference design materials |
-| `bash D3_linux_setup.sh list-version` | View available version numbers |
-| `bash D3_linux_setup.sh list-tools` | View the list of available tools |
-| `bash D3_linux_setup.sh build-image` | Build the latest system image |
-| `bash D3_linux_setup.sh build-image <version>` | Build the system image for a specified version |
+| `bash D3_debian_setup.sh all` | One-click download of all resources for the latest version |
+| `bash D3_debian_setup.sh all <version>` | One-click download of all resources for a specified version |
+| `bash D3_debian_setup.sh docker` | Download the latest Docker image |
+| `bash D3_debian_setup.sh docker <version>` | Download the Docker image for a specified version |
+| `bash D3_debian_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
+| `bash D3_debian_setup.sh sdk` | Download the latest SDK source code |
+| `bash D3_debian_setup.sh sdk <version>` | Download the SDK source code for a specified version |
+| `bash D3_debian_setup.sh tools` | Download all tools |
+| `bash D3_debian_setup.sh tools <tool_name>` | Download a single tool |
+| `bash D3_debian_setup.sh model-zoo` | Download the latest algorithm model library |
+| `bash D3_debian_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
+| `bash D3_debian_setup.sh docs` | Download the latest documentation |
+| `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
+| `bash D3_debian_setup.sh hw-ref-design` | Download hardware reference design materials |
+| `bash D3_debian_setup.sh list-version` | View available version numbers |
+| `bash D3_debian_setup.sh list-tools` | View the list of available tools |
+| `bash D3_debian_setup.sh build-rootfs` | Build the latest Ubuntu root filesystem |
+| `bash D3_debian_setup.sh build-rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
+| `bash D3_debian_setup.sh build-image` | Build the latest system image |
+| `bash D3_debian_setup.sh build-image <version>` | Build the system image for a specified version |
 
-> **Main difference from the Debian SDK:** The Linux SDK adds an `image` command that lets you directly download a precompiled firmware image, with no local compilation required.
+### 3.3 Linux SDK
+
+The Linux SDK provides a streamlined 64-bit Linux system (no desktop), suitable for productization deployment, resource-constrained scenarios, or cases where a graphical interface is not needed. The Linux SDK also supports directly downloading precompiled firmware images, with no local compilation required.
 
 **Quick start:**
 
@@ -246,6 +219,33 @@ Directory structure after running `all`:
     ├── UsbDevelopTool/
     └── ...
 ```
+
+**Command reference:**
+
+| Command | Description |
+|---------|-------------|
+| `bash D3_linux_setup.sh all` | One-click download of all resources for the latest version |
+| `bash D3_linux_setup.sh all <version>` | One-click download of all resources for a specified version |
+| `bash D3_linux_setup.sh docker` | Download the latest Docker image |
+| `bash D3_linux_setup.sh docker <version>` | Download the Docker image for a specified version |
+| `bash D3_linux_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
+| `bash D3_linux_setup.sh sdk` | Download the latest SDK source code |
+| `bash D3_linux_setup.sh sdk <version>` | Download the SDK source code for a specified version |
+| `bash D3_linux_setup.sh image` | Download the latest firmware image for flashing |
+| `bash D3_linux_setup.sh image <version>` | Download the firmware image for a specified version |
+| `bash D3_linux_setup.sh tools` | Download all tools |
+| `bash D3_linux_setup.sh tools <tool_name>` | Download a single tool |
+| `bash D3_linux_setup.sh model-zoo` | Download the latest algorithm model library |
+| `bash D3_linux_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
+| `bash D3_linux_setup.sh docs` | Download the latest documentation |
+| `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
+| `bash D3_linux_setup.sh hw-ref-design` | Download hardware reference design materials |
+| `bash D3_linux_setup.sh list-version` | View available version numbers |
+| `bash D3_linux_setup.sh list-tools` | View the list of available tools |
+| `bash D3_linux_setup.sh build-image` | Build the latest system image |
+| `bash D3_linux_setup.sh build-image <version>` | Build the system image for a specified version |
+
+> **Main difference from the Debian SDK:** The Linux SDK adds an `image` command that lets you directly download a precompiled firmware image, with no local compilation required.
 
 ---
 
@@ -398,6 +398,8 @@ Open "UsbDevelopToolUI.exe" --> "Firmware Upgrade", select the `SgsUsbUpgrade.bi
 1. Open a browser and visit [Git Web](https://git.sigmastar.com.cn:9090/user/login)
 
 2. Enter your login credentials
+
+	![Enter your login credentials](mymedia/gitweb-login_en.png)
 
     - **Username**: The email used when registering your Comake account
     - **Password**: Your Comake community account password

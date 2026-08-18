@@ -119,31 +119,6 @@ cd download_scripts
 
 Debian SDK 提供完整的 Ubuntu 桌面体验，适合新手入门、桌面交互和多媒体播放场景。
 
-**命令速查表：**
-
-| 命令 | 说明 |
-|------|------|
-| `bash D3_debian_setup.sh all` | 一键下载最新版本全部资源 |
-| `bash D3_debian_setup.sh all <version>` | 一键下载指定版本全部资源 |
-| `bash D3_debian_setup.sh docker` | 下载最新版本 Docker 镜像 |
-| `bash D3_debian_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
-| `bash D3_debian_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
-| `bash D3_debian_setup.sh sdk` | 下载最新版本 SDK 源码 |
-| `bash D3_debian_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
-| `bash D3_debian_setup.sh tools` | 下载全部工具 |
-| `bash D3_debian_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_debian_setup.sh model-zoo` | 下载最新版本算法模型库 |
-| `bash D3_debian_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
-| `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
-| `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
-| `bash D3_debian_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
-| `bash D3_debian_setup.sh list-version` | 查看可用版本号 |
-| `bash D3_debian_setup.sh list-tools` | 查看可用工具列表 |
-| `bash D3_debian_setup.sh build-rootfs` | 构建最新版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build-rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build-image` | 编译最新版本系统镜像 |
-| `bash D3_debian_setup.sh build-image <version>` | 编译指定版本系统镜像 |
-
 **快速上手：**
 
 ```bash
@@ -179,36 +154,34 @@ bash D3_debian_setup.sh all
     └── ...
 ```
 
-### 3.3 Linux SDK
-
-Linux SDK 提供精简的 64-bit Linux 系统（无桌面），适合产品化部署、资源受限或不需要图形界面的场景。Linux SDK 还支持直接下载预编译的固件镜像，无需本地编译。
-
 **命令速查表：**
 
 | 命令 | 说明 |
 |------|------|
-| `bash D3_linux_setup.sh all` | 一键下载最新版本全部资源 |
-| `bash D3_linux_setup.sh all <version>` | 一键下载指定版本全部资源 |
-| `bash D3_linux_setup.sh docker` | 下载最新版本 Docker 镜像 |
-| `bash D3_linux_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
-| `bash D3_linux_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
-| `bash D3_linux_setup.sh sdk` | 下载最新版本 SDK 源码 |
-| `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
-| `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
-| `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
-| `bash D3_linux_setup.sh tools` | 下载全部工具 |
-| `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_linux_setup.sh model-zoo` | 下载最新版本算法模型库 |
-| `bash D3_linux_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
-| `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
-| `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
-| `bash D3_linux_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
-| `bash D3_linux_setup.sh list-version` | 查看可用版本号 |
-| `bash D3_linux_setup.sh list-tools` | 查看可用工具列表 |
-| `bash D3_linux_setup.sh build-image` | 编译最新版本系统镜像 |
-| `bash D3_linux_setup.sh build-image <version>` | 编译指定版本系统镜像 |
+| `bash D3_debian_setup.sh all` | 一键下载最新版本全部资源 |
+| `bash D3_debian_setup.sh all <version>` | 一键下载指定版本全部资源 |
+| `bash D3_debian_setup.sh docker` | 下载最新版本 Docker 镜像 |
+| `bash D3_debian_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
+| `bash D3_debian_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
+| `bash D3_debian_setup.sh sdk` | 下载最新版本 SDK 源码 |
+| `bash D3_debian_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
+| `bash D3_debian_setup.sh tools` | 下载全部工具 |
+| `bash D3_debian_setup.sh tools <tool_name>` | 下载单个工具 |
+| `bash D3_debian_setup.sh model-zoo` | 下载最新版本算法模型库 |
+| `bash D3_debian_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
+| `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
+| `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
+| `bash D3_debian_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
+| `bash D3_debian_setup.sh list-version` | 查看可用版本号 |
+| `bash D3_debian_setup.sh list-tools` | 查看可用工具列表 |
+| `bash D3_debian_setup.sh build-rootfs` | 构建最新版本 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build-rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build-image` | 编译最新版本系统镜像 |
+| `bash D3_debian_setup.sh build-image <version>` | 编译指定版本系统镜像 |
 
-> **与 Debian SDK 的主要差异：** Linux SDK 多了 `image` 命令可直接下载预编译固件镜像，无需本地编译。
+### 3.3 Linux SDK
+
+Linux SDK 提供精简的 64-bit Linux 系统（无桌面），适合产品化部署、资源受限或不需要图形界面的场景。Linux SDK 还支持直接下载预编译的固件镜像，无需本地编译。
 
 **快速上手：**
 
@@ -245,6 +218,33 @@ bash D3_linux_setup.sh all
     ├── UsbDevelopTool/
     └── ...
 ```
+
+**命令速查表：**
+
+| 命令 | 说明 |
+|------|------|
+| `bash D3_linux_setup.sh all` | 一键下载最新版本全部资源 |
+| `bash D3_linux_setup.sh all <version>` | 一键下载指定版本全部资源 |
+| `bash D3_linux_setup.sh docker` | 下载最新版本 Docker 镜像 |
+| `bash D3_linux_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
+| `bash D3_linux_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
+| `bash D3_linux_setup.sh sdk` | 下载最新版本 SDK 源码 |
+| `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
+| `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
+| `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
+| `bash D3_linux_setup.sh tools` | 下载全部工具 |
+| `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
+| `bash D3_linux_setup.sh model-zoo` | 下载最新版本算法模型库 |
+| `bash D3_linux_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
+| `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
+| `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
+| `bash D3_linux_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
+| `bash D3_linux_setup.sh list-version` | 查看可用版本号 |
+| `bash D3_linux_setup.sh list-tools` | 查看可用工具列表 |
+| `bash D3_linux_setup.sh build-image` | 编译最新版本系统镜像 |
+| `bash D3_linux_setup.sh build-image <version>` | 编译指定版本系统镜像 |
+
+> **与 Debian SDK 的主要差异：** Linux SDK 多了 `image` 命令可直接下载预编译固件镜像，无需本地编译。
 
 ---
 
@@ -398,9 +398,10 @@ bash D3_linux_setup.sh build-image
 
 2. 输入登录凭据
 
+	![输入登录凭据](mymedia/gitweb-login.png)
+
     - **用户名**：Comake 社区注册邮箱
     - **密码**：Comake 社区账户密码
-
 
 3. 点击「登录」按钮
 
