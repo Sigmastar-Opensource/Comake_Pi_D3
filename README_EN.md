@@ -134,8 +134,8 @@ Directory structure after running `all`:
 ├── D3_debian_setup.sh
 ├── docker_versions.yaml
 ├── docs/                # Documentation
-├── hw-ref-design/       # Hardware reference design
-├── model-zoo/           # Algorithm model library
+├── hw_ref_design/       # Hardware reference design
+├── sgs_model_zoo/       # Algorithm model library
 ├── SourceCode/          # SDK source code (see Chapter 4)
 │   ├── boot/
 │   ├── kernel/
@@ -163,22 +163,22 @@ Directory structure after running `all`:
 | `bash D3_debian_setup.sh all <version>` | One-click download of all resources for a specified version |
 | `bash D3_debian_setup.sh docker` | Download the latest Docker image |
 | `bash D3_debian_setup.sh docker <version>` | Download the Docker image for a specified version |
-| `bash D3_debian_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
+| `bash D3_debian_setup.sh sdk_toolchains` | Download the cross-compilation toolchain |
 | `bash D3_debian_setup.sh sdk` | Download the latest SDK source code |
 | `bash D3_debian_setup.sh sdk <version>` | Download the SDK source code for a specified version |
 | `bash D3_debian_setup.sh tools` | Download all tools |
 | `bash D3_debian_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_debian_setup.sh model-zoo` | Download the latest algorithm model library |
-| `bash D3_debian_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
+| `bash D3_debian_setup.sh model_zoo` | Download the latest algorithm model library |
+| `bash D3_debian_setup.sh model_zoo <version>` | Download the algorithm model library for a specified version |
 | `bash D3_debian_setup.sh docs` | Download the latest documentation |
 | `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
-| `bash D3_debian_setup.sh hw-ref-design` | Download hardware reference design materials |
-| `bash D3_debian_setup.sh list-version` | View available version numbers |
-| `bash D3_debian_setup.sh list-tools` | View the list of available tools |
-| `bash D3_debian_setup.sh build-rootfs` | Build the latest Ubuntu root filesystem |
-| `bash D3_debian_setup.sh build-rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
-| `bash D3_debian_setup.sh build-image` | Build the latest system image |
-| `bash D3_debian_setup.sh build-image <version>` | Build the system image for a specified version |
+| `bash D3_debian_setup.sh hw_ref_design` | Download hardware reference design materials |
+| `bash D3_debian_setup.sh list_version` | View available version numbers |
+| `bash D3_debian_setup.sh list_tools` | View the list of available tools |
+| `bash D3_debian_setup.sh build_rootfs` | Build the latest Ubuntu root filesystem |
+| `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
+| `bash D3_debian_setup.sh build_image` | Build the latest system image |
+| `bash D3_debian_setup.sh build_image <version>` | Build the system image for a specified version |
 
 ### 3.3 Linux SDK
 
@@ -198,9 +198,9 @@ Directory structure after running `all`:
 ├── D3_linux_setup.sh
 ├── docker_versions.yaml
 ├── docs/                # Documentation
-├── hw-ref-design/       # Hardware reference design
+├── hw_ref_design/       # Hardware reference design
 ├── image/               # Precompiled firmware image (images.tar.gz)
-├── model-zoo/           # Algorithm model library
+├── sgs_model_zoo/       # Algorithm model library
 ├── SourceCode/          # SDK source code (see Chapter 4)
 │   ├── boot/
 │   ├── kernel/
@@ -228,22 +228,22 @@ Directory structure after running `all`:
 | `bash D3_linux_setup.sh all <version>` | One-click download of all resources for a specified version |
 | `bash D3_linux_setup.sh docker` | Download the latest Docker image |
 | `bash D3_linux_setup.sh docker <version>` | Download the Docker image for a specified version |
-| `bash D3_linux_setup.sh sdk-toolchains` | Download the cross-compilation toolchain |
+| `bash D3_linux_setup.sh sdk_toolchains` | Download the cross-compilation toolchain |
 | `bash D3_linux_setup.sh sdk` | Download the latest SDK source code |
 | `bash D3_linux_setup.sh sdk <version>` | Download the SDK source code for a specified version |
 | `bash D3_linux_setup.sh image` | Download the latest firmware image for flashing |
 | `bash D3_linux_setup.sh image <version>` | Download the firmware image for a specified version |
 | `bash D3_linux_setup.sh tools` | Download all tools |
 | `bash D3_linux_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_linux_setup.sh model-zoo` | Download the latest algorithm model library |
-| `bash D3_linux_setup.sh model-zoo <version>` | Download the algorithm model library for a specified version |
+| `bash D3_linux_setup.sh model_zoo` | Download the latest algorithm model library |
+| `bash D3_linux_setup.sh model_zoo <version>` | Download the algorithm model library for a specified version |
 | `bash D3_linux_setup.sh docs` | Download the latest documentation |
 | `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
-| `bash D3_linux_setup.sh hw-ref-design` | Download hardware reference design materials |
-| `bash D3_linux_setup.sh list-version` | View available version numbers |
-| `bash D3_linux_setup.sh list-tools` | View the list of available tools |
-| `bash D3_linux_setup.sh build-image` | Build the latest system image |
-| `bash D3_linux_setup.sh build-image <version>` | Build the system image for a specified version |
+| `bash D3_linux_setup.sh hw_ref_design` | Download hardware reference design materials |
+| `bash D3_linux_setup.sh list_version` | View available version numbers |
+| `bash D3_linux_setup.sh list_tools` | View the list of available tools |
+| `bash D3_linux_setup.sh build_image` | Build the latest system image |
+| `bash D3_linux_setup.sh build_image <version>` | Build the system image for a specified version |
 
 > **Main difference from the Debian SDK:** The Linux SDK adds an `image` command that lets you directly download a precompiled firmware image, with no local compilation required.
 
@@ -307,10 +307,10 @@ After the download completes, use the script to build with one click:
 
 ```bash
 # Build the Ubuntu root filesystem
-bash D3_debian_setup.sh build-rootfs
+bash D3_debian_setup.sh build_rootfs
 
 # Build the 64-bit Ubuntu system image
-bash D3_debian_setup.sh build-image
+bash D3_debian_setup.sh build_image
 ```
 
 The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#Upgrade) for the upgrade method.
@@ -319,7 +319,7 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 
 ```bash
 # Build the 64-bit Linux system image
-bash D3_linux_setup.sh build-image
+bash D3_linux_setup.sh build_image
 ```
 
 The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#Upgrade) for the upgrade method.

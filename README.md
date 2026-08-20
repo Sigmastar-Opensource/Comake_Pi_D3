@@ -133,8 +133,8 @@ bash D3_debian_setup.sh all
 ├── D3_debian_setup.sh
 ├── docker_versions.yaml
 ├── docs/                # 文档
-├── hw-ref-design/       # 硬件参考设计
-├── model-zoo/           # 算法模型库
+├── hw_ref_design/       # 硬件参考设计
+├── sgs_model_zoo/       # 算法模型库
 ├── SourceCode/          # SDK 源码（详见第 4 章）
 │   ├── boot/
 │   ├── kernel/
@@ -162,22 +162,22 @@ bash D3_debian_setup.sh all
 | `bash D3_debian_setup.sh all <version>` | 一键下载指定版本全部资源 |
 | `bash D3_debian_setup.sh docker` | 下载最新版本 Docker 镜像 |
 | `bash D3_debian_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
-| `bash D3_debian_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
+| `bash D3_debian_setup.sh sdk_toolchains` | 下载交叉编译工具链 |
 | `bash D3_debian_setup.sh sdk` | 下载最新版本 SDK 源码 |
 | `bash D3_debian_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
 | `bash D3_debian_setup.sh tools` | 下载全部工具 |
 | `bash D3_debian_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_debian_setup.sh model-zoo` | 下载最新版本算法模型库 |
-| `bash D3_debian_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
+| `bash D3_debian_setup.sh model_zoo` | 下载最新版本算法模型库 |
+| `bash D3_debian_setup.sh model_zoo <version>` | 下载指定版本算法模型库 |
 | `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
-| `bash D3_debian_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
-| `bash D3_debian_setup.sh list-version` | 查看可用版本号 |
-| `bash D3_debian_setup.sh list-tools` | 查看可用工具列表 |
-| `bash D3_debian_setup.sh build-rootfs` | 构建最新版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build-rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build-image` | 编译最新版本系统镜像 |
-| `bash D3_debian_setup.sh build-image <version>` | 编译指定版本系统镜像 |
+| `bash D3_debian_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
+| `bash D3_debian_setup.sh list_version` | 查看可用版本号 |
+| `bash D3_debian_setup.sh list_tools` | 查看可用工具列表 |
+| `bash D3_debian_setup.sh build_rootfs` | 构建最新版本 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_image` | 编译最新版本系统镜像 |
+| `bash D3_debian_setup.sh build_image <version>` | 编译指定版本系统镜像 |
 
 ### 3.3 Linux SDK
 
@@ -197,9 +197,9 @@ bash D3_linux_setup.sh all
 ├── D3_linux_setup.sh
 ├── docker_versions.yaml
 ├── docs/                # 文档
-├── hw-ref-design/       # 硬件参考设计
+├── hw_ref_design/       # 硬件参考设计
 ├── image/               # 预编译固件镜像（images.tar.gz）
-├── model-zoo/           # 算法模型库
+├── sgs_model_zoo/       # 算法模型库
 ├── SourceCode/          # SDK 源码（详见第 4 章）
 │   ├── boot/
 │   ├── kernel/
@@ -227,22 +227,22 @@ bash D3_linux_setup.sh all
 | `bash D3_linux_setup.sh all <version>` | 一键下载指定版本全部资源 |
 | `bash D3_linux_setup.sh docker` | 下载最新版本 Docker 镜像 |
 | `bash D3_linux_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
-| `bash D3_linux_setup.sh sdk-toolchains` | 下载交叉编译工具链 |
+| `bash D3_linux_setup.sh sdk_toolchains` | 下载交叉编译工具链 |
 | `bash D3_linux_setup.sh sdk` | 下载最新版本 SDK 源码 |
 | `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
 | `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
 | `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
 | `bash D3_linux_setup.sh tools` | 下载全部工具 |
 | `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_linux_setup.sh model-zoo` | 下载最新版本算法模型库 |
-| `bash D3_linux_setup.sh model-zoo <version>` | 下载指定版本算法模型库 |
+| `bash D3_linux_setup.sh model_zoo` | 下载最新版本算法模型库 |
+| `bash D3_linux_setup.sh model_zoo <version>` | 下载指定版本算法模型库 |
 | `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
-| `bash D3_linux_setup.sh hw-ref-design` | 下载硬件参考设计资料 |
-| `bash D3_linux_setup.sh list-version` | 查看可用版本号 |
-| `bash D3_linux_setup.sh list-tools` | 查看可用工具列表 |
-| `bash D3_linux_setup.sh build-image` | 编译最新版本系统镜像 |
-| `bash D3_linux_setup.sh build-image <version>` | 编译指定版本系统镜像 |
+| `bash D3_linux_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
+| `bash D3_linux_setup.sh list_version` | 查看可用版本号 |
+| `bash D3_linux_setup.sh list_tools` | 查看可用工具列表 |
+| `bash D3_linux_setup.sh build_image` | 编译最新版本系统镜像 |
+| `bash D3_linux_setup.sh build_image <version>` | 编译指定版本系统镜像 |
 
 > **与 Debian SDK 的主要差异：** Linux SDK 多了 `image` 命令可直接下载预编译固件镜像，无需本地编译。
 
@@ -306,10 +306,10 @@ SourceCode/
 
 ```bash
 # 构建 Ubuntu 根文件系统
-bash D3_debian_setup.sh build-rootfs
+bash D3_debian_setup.sh build_rootfs
 
 # 编译 64-bit Ubuntu 系统镜像
-bash D3_debian_setup.sh build-image
+bash D3_debian_setup.sh build_image
 ```
 
 其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#Upgrade)。
@@ -318,7 +318,7 @@ bash D3_debian_setup.sh build-image
 
 ```bash
 # 编译 64-bit Linux 系统镜像
-bash D3_linux_setup.sh build-image
+bash D3_linux_setup.sh build_image
 ```
 
 其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#Upgrade)。
