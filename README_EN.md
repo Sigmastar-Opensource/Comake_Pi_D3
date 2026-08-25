@@ -4,11 +4,11 @@
 
 ### 1.1 Comake
 
-[Comake](https://www.comake.online) is a one-stop edge-side AI development service platform providing end-to-end support from selection to mass production. "Comake Pi" is Comake's self-developed physical AI development board series, covering all scenarios from lightweight smart AIoT (1 TOPS) to robot brains (300 TOPS).
+[Comake](https://www.comake.online) is a one-stop edge-side AI development service platform providing end-to-end support from selection to mass production. "Comake Pi" is Comake's self-developed physical AI development board series, covering the scenarios from lightweight smart AIoT (1 TOPS) to video edge computing (8 TOPS).
 
 ### 1.2 Git Web
 
-Git Web is the code hosting platform provided externally by Sigmastar.
+[Git Web](https://git.sigmastar.com.cn:9090/user/login) is the code hosting platform provided externally by Sigmastar.
 
 **Platform positioning:**
 
@@ -17,7 +17,7 @@ Git Web is the code hosting platform provided externally by Sigmastar.
 
 **Account system:**
 
-The Git Web platform's accounts are integrated with the Sigmastar Comake community (`https://www.comake.online`). Users must first register a Comake community account before they can log in to Git Web.
+The [Git Web](https://git.sigmastar.com.cn:9090/user/login) platform's accounts are integrated with the Sigmastar Comake community (`https://www.comake.online`). Users must first register a Comake community account before they can log in to Git Web.
 
 > **Note**: This platform is read-only for external users and **does not support creating personal repositories or directly committing code**.
 
@@ -103,6 +103,11 @@ After registering an account on the [Comake community](https://www.comake.online
 
         sudo wget https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -O /usr/bin/repo
         sudo chmod a+x /usr/bin/repo
+
+3. Set Git global username and email:
+
+        git config --global user.name "your username"
+        git config --global user.email "your email@example.com"
 
 ---
 
@@ -342,7 +347,7 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 
 Depending on the current state of the eMMC, choose the corresponding method to put the board into USB upgrade mode:
 
-- **Blank chip upgrade**: The eMMC is in a factory-blank state, or firmware such as U-Boot has been completely erased. Place a jumper cap on JPF6 USB BOOT (marked ⑥ in the hardware connection diagram), and the board will be forced into USB boot mode.
+- **Blank chip upgrade**: The eMMC is in its factory-blank state, or firmware such as U-Boot has been completely erased. The board is in USB upgrade mode by default; simply plug the USB cable into the CONU8 USB3.0 port and it will be recognized for upgrade.
 
 - **Non-blank chip upgrade**: A runnable U-Boot already exists on the eMMC.
 
@@ -358,6 +363,8 @@ Depending on the current state of the eMMC, choose the corresponding method to p
             <USB>[LINK] High speed device.
             <USB>[2][Enable] bulk out with maxpacket/fifo(512/1024)
             <USB>[1][Enable] bulk in with maxpacket/fifo(512/8192)
+
+- **Forced upgrade**: Put a jumper cap on the JPF6 USB BOOT header (marked ⑥ in the hardware connection diagram), and the board will be forced into USB boot mode. This can be used for forced upgrade and recovery in abnormal states. After the upgrade, remove the jumper cap before normal use.
 
 ### 6.3 Full Firmware Package Upgrade
 

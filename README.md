@@ -4,11 +4,11 @@
 
 ### 1.1 Comake
 
-[Comake](https://www.comake.online) 是一站式端边侧 AI 开发服务平台，提供从选型到量产的全链路支持。"Comake Pi" 是 Comake 自研的物理 AI 开发板系列，覆盖从轻智能 AIoT（1T 算力）到机器人大脑（300T 算力）的全场景需求。
+[Comake](https://www.comake.online) 是一站式端边侧 AI 开发服务平台，提供从选型到量产的全链路支持。"Comake Pi" 是 Comake 自研的物理 AI 开发板系列，覆盖从轻智能 AIoT（1T 算力）到视频边缘计算（8T 算力）的场景需求。
 
 ### 1.2 Git Web
 
-Git Web 是 Sigmastar 对外提供的代码托管平台。
+[Git Web](https://git.sigmastar.com.cn:9090/user/login) 是 Sigmastar 对外提供的代码托管平台。
 
 **平台定位**：
 
@@ -17,7 +17,7 @@ Git Web 是 Sigmastar 对外提供的代码托管平台。
 
 **账号体系**：
 
-Git Web 平台的账号与 Sigmastar Comake 社区（`https://www.comake.online`）打通，用户需先注册 Comake 社区账号后方可登录 Git Web。
+[Git Web](https://git.sigmastar.com.cn:9090/user/login) 平台的账号与 Sigmastar Comake 社区（`https://www.comake.online`）打通，用户需先注册 Comake 社区账号后方可登录 Git Web。
 
 > **注意**：本平台为对外只读平台，**不支持用户创建个人仓库或直接提交代码**。
 
@@ -103,6 +103,11 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 
         sudo wget https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -O /usr/bin/repo
         sudo chmod a+x /usr/bin/repo
+
+3. 设置 Git 全局用户名和邮箱：
+
+        git config --global user.name "你的用户名"
+        git config --global user.email "你的邮箱@example.com"
 
 ---
 
@@ -341,7 +346,7 @@ bash D3_linux_setup.sh build_image
 
 根据 eMMC 当前状态，选择对应方式让开发板进入 USB 升级模式：
 
-- **空片升级**：eMMC 处于出厂空白状态，或 U-Boot 等固件已被完全擦除。在 JPF6 USB BOOT 插上跳帽（硬件连接图标记 ⑥），开发板即强制进入 USB 启动模式。
+- **空片升级**：eMMC 处于出厂空白状态，或 U-Boot 等固件已被完全擦除。默认处于USB升级模式，直接插入USB线至CONU8 USB3.0即可识别升级。
 
 - **非空片升级**：eMMC 上已有可运行的 U-Boot。
 
@@ -357,6 +362,8 @@ bash D3_linux_setup.sh build_image
             <USB>[LINK] High speed device.
             <USB>[2][Enable] bulk out with maxpacket/fifo(512/1024)
             <USB>[1][Enable] bulk in with maxpacket/fifo(512/8192)
+
+- **强制升级**：在JPF6 USB BOOT 插上跳帽（硬件连接图标记⑥），开发板即强制进入 USB 启动模式。可用于异常状态下的强制升级恢复。升级完成后需要拔掉跳帽才可正常使用。
 
 ### 6.3 整包固件升级
 
