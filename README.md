@@ -19,35 +19,57 @@
 
 [Git Web](https://git.sigmastar.com.cn:9090/user/login) 平台的账号与 Sigmastar Comake 社区（`https://www.comake.online`）打通，用户需先注册 Comake 社区账号后方可登录 Git Web。
 
+> [!NOTE]
 > **注意**：本平台为对外只读平台，**不支持用户创建个人仓库或直接提交代码**。
 
 ### 1.3 Comake Pi D3
 
-Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板**。其核心计算模块搭载 SigmaStar SCM8003G 主控芯片，采用 260-Pin SO-DIMM 金手指标准封装。核心规格如下：
+Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板**。其核心计算模块搭载 SigmaStar SCM8003G 主控芯片，采用 260-Pin SO-DIMM 金手指标准封装。以下是具体的硬件规格描述。
 
-| 项目 | 规格 |
-|------|------|
-| SoC | SCM8003G，6 核 ARM Cortex-A55，最高 1.8GHz |
-| AI 引擎 | 8 TOPS IPU（支持 INT4/8/16、FP16/BF16） |
-| 视频分析 | IVE 智能视频引擎（30+ 算子） |
-| 安全引擎 | AES/RSA/SM2~4 国密、Secure Boot、TrustZone |
-| 内存 | LPDDR4X，2GB / 4GB（可选配置），最高 3200 Mbps |
-| 存储 | 64GB eMMC 5.0 |
-| 视频解码 | H.264/H.265，最大 2 路 8K@30fps；JPEG 4K@25fps × 2 |
-| 视频编码 | H.264 1080P@30fps；JPEG 4K@30fps |
-| 显示 | HDMI 4K@30 + MIPI DSI 2560×1600@60 + VGA 1920×1200@60，支持双屏异显 |
-| 音频 | 立体声 ADC + DAC；I2S 8 通道 + DMIC 8 通道 |
-| 网络 | 双路千兆网（底板需外接 PHY） |
-| USB | 1× USB 3.0 DRD + 4× USB 2.0 |
-| PCIe | 双路 PCIe 2.0，每路 2-Lane，5 GT/s |
-| SATA | 双路 SATA 3.0，6 Gbps |
-| 尺寸 | 70.0mm × 45.0mm，典型功耗 ≤ 7W |
+#### 1.3.1 主板接口模块示意图
 
-#### 1.3.1 开发板接口
+![](mymedia/board-main.svg)
 
-![主板接口](mymedia/board-main.svg)
+#### 1.3.2 底板接口模块示意图
 
-![底板接口](mymedia/board-base.svg)
+![](mymedia/board-base.svg)
+
+#### 1.3.3 接口概览
+
+| 接口（模块） | 名称 | 规格 | 用途（外设） |
+| --- | --- | --- | --- |
+| SCM8003G | 主控 SoC | 六核 ARM Cortex-A55，主频最高 1.8GHz | 为设备提供核心计算与控制能力，面向端边侧 AI/NVR 应用 |
+| CXDB5CBAM-MA-B | DDR 内存 | LPDDR4X，总容量 4GB | 为 SCM8003G 主控提供高速运行内存 |
+| JPO1 DBG | Debug UART 接口 | 4pin 调试排针，TTL 电平，波特率 115200 | 开发板标准调试串口，与计算机串口通信，用于底层固件烧录、调试、日志记录（杜邦线、USB-TTL 串口转换板、USB 延长线、Linux PC） |
+| CONV1 12V DC | 电源接口 | DC 12V 直流电源输入 | 为开发板提供直流电源输入（DC 12V 电源适配器） |
+| CONU8 USB2.0+USB3.0 | USB 接口 | USB 2.0 接口 + USB 3.0 接口 | 通过 fastboot 协议进行固件烧录与系统升级（双公头 USB 数据线） |
+| CON11 USB2.0*2 | USB 接口 | 2 个 USB 2.0 接口 | 操作桌面系统、挂载 U 盘（鼠标、键盘、U 盘） |
+| CONH1 HDMI | HDMI 接口 | HDMI Type-A 输出接口 | 高清多媒体输出，连接显示器输出 Ubuntu 桌面，支持可视化操作与界面调试（HDMI 数据线、显示屏） |
+| CONG1 RJ45 GE0 | 千兆以太网口 | RJ45 接口，支持 10 / 100 / 1000Mbps | 连接网络，支持网络通信与远程调试，实现高速数据传输（网线） |
+| CONG2 RJ45 GE1 | 千兆以太网口 | RJ45 接口，支持 10 / 100 / 1000Mbps | 连接网络，支持网络通信与远程调试，实现高速数据传输（网线） |
+| J13 FAN CON | 风扇接口 | PWM 控制风扇，默认 5V，可选 12V | 连接散热风扇，通过 PWM 调节转速进行散热（风扇） |
+| SDC2 TF Socket | TF 卡座 | Micro SD 卡槽 | 插入 TF 卡扩展存储与系统启动（TF 卡） |
+| CON8 MIPI Panel | MIPI 接口 | MIPI DSI 输出接口 | 连接 MIPI 屏输出 Ubuntu 桌面（FPC 排线、MIPI 屏） |
+| CON9 TP CON | 触摸接口 | FPC 触摸接口，默认左侧线序 | 连接触摸屏，实现触摸输入与界面交互（FPC 排线、触摸屏） |
+| J7 SATA PWR | SATA 电源接口 | SATA 硬盘电源接口 | 为 SATA 硬盘提供电源（SATA 电源线） |
+| CONS4 SATA | SATA 接口 | 支持 SATA gen3 | 连接 SATA 硬盘进行存储扩展（SATA 硬盘） |
+| CONP2 PCIE CON | PCIe 连接器 | PCIe gen2×2 | 连接 PCIe 设备，扩展高速外设（PCIe 扩展卡） |
+| JPF6 USB BOOT | USB 启动插针 | 2pin USB 启动插针 | 插入跳帽后强制进入 USB 启动模式，用于空片烧录或固件恢复（跳帽） |
+| J1 RTC PWR | RTC 电池插针 | 2pin RTC 供电插针 | 连接 RTC 电池，断电后保持系统时钟（RTC 电池） |
+| JP2 30P Expansion Header | 30P 扩展排针 | 30pin 扩展插针 | 引出 GPIO 等信号用于扩展外设（杜邦线、扩展模块） |
+| JP1 40P Expansion | 40P 扩展排针 | 40pin 扩展插针 | 引出 GPIO 等信号用于扩展外设（杜邦线、扩展模块） |
+| JPF9 USB2.0 PWR | USB2.0 供电插针 | CONU8 中 USB2.0 VBUS 供电插针 | 配置为 HOST 给 Device 供电时需插跳帽（跳帽） |
+| JPF8 USB3.0 PWR | USB3.0 供电插针 | CONU8 中 USB3.0 VBUS 供电插针 | 配置为 HOST 给 Device 供电时需插跳帽（跳帽） |
+| CON10 SPK_R | 扬声器接口（右声道） | 模拟音频输出接口 | 输出右声道音频，驱动扬声器播放（扬声器） |
+| CON4 SPK_L | 扬声器接口（左声道） | 模拟音频输出接口 | 输出左声道音频，驱动扬声器播放（扬声器） |
+| CON24 MIC1 | 麦克风接口 | 模拟音频输入接口 | 采集音频信号输入系统，用于语音录入与通话（麦克风） |
+| CON23 MIC0 | 麦克风接口 | 模拟音频输入接口 | 采集音频信号输入系统，用于语音录入与通话（麦克风） |
+| J4 mSATA | mSATA 接口 | mSATA 硬盘接口 | 连接 mSATA 硬盘进行存储扩展（mSATA 硬盘） |
+| CN1 M.2 B-KEY 2230 | M.2 B-Key 连接器 | PCIe 2.0×2 + USB 2.0 | 包含 PCIe 2.0×2 可接 NVMe SSD 2230 硬盘，并提供一对 USB 2.0 可接 4G 模块 EM05-CN（NVMe SSD、4G 模块） |
+| JZ2 DMIC | DMIC 接口 | 4ch DMIC，最多支持 8 颗 DMIC | 连接数字麦克风采集音频输入（DMIC） |
+| JW1 IPEX | IPEX 座子 | Wi-Fi 天线 IPEX 座子 | 连接 Wi-Fi 天线（Wi-Fi 天线） |
+| UW2 USB-Wifi | USB Wi-Fi 模组接口 | 预留 USB Wi-Fi 模组，接 SSW105AT，USB P0 默认做 Type-A | 接入 USB Wi-Fi 模组实现无线网络（USB Wi-Fi 模组） |
+| CN4 NANO-SIM CON | NANO-SIM 卡座 | NANO-SIM 卡座 | 插入 SIM 卡，配合 M.2 的 4G 模块使用（SIM 卡） |
 
 ---
 
@@ -163,6 +185,7 @@ bash D3_debian_setup.sh all
 
 | 命令 | 说明 |
 |------|------|
+| `bash D3_debian_setup.sh list_version` | 查看可用版本号 |
 | `bash D3_debian_setup.sh all` | 一键下载最新版本全部资源 |
 | `bash D3_debian_setup.sh all <version>` | 一键下载指定版本全部资源 |
 | `bash D3_debian_setup.sh docker` | 下载最新版本 Docker 镜像 |
@@ -170,6 +193,7 @@ bash D3_debian_setup.sh all
 | `bash D3_debian_setup.sh sdk_toolchains` | 下载交叉编译工具链 |
 | `bash D3_debian_setup.sh sdk` | 下载最新版本 SDK 源码 |
 | `bash D3_debian_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
+| `bash D3_debian_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_debian_setup.sh tools` | 下载全部工具 |
 | `bash D3_debian_setup.sh tools <tool_name>` | 下载单个工具 |
 | `bash D3_debian_setup.sh model_zoo` | 下载最新版本算法模型库 |
@@ -177,8 +201,6 @@ bash D3_debian_setup.sh all
 | `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
 | `bash D3_debian_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_debian_setup.sh list_version` | 查看可用版本号 |
-| `bash D3_debian_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_debian_setup.sh build_rootfs` | 构建最新版本 Ubuntu 根文件系统 |
 | `bash D3_debian_setup.sh build_rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
 | `bash D3_debian_setup.sh build_image` | 编译最新版本系统镜像 |
@@ -228,6 +250,7 @@ bash D3_linux_setup.sh all
 
 | 命令 | 说明 |
 |------|------|
+| `bash D3_linux_setup.sh list_version` | 查看可用版本号 |
 | `bash D3_linux_setup.sh all` | 一键下载最新版本全部资源 |
 | `bash D3_linux_setup.sh all <version>` | 一键下载指定版本全部资源 |
 | `bash D3_linux_setup.sh docker` | 下载最新版本 Docker 镜像 |
@@ -237,6 +260,7 @@ bash D3_linux_setup.sh all
 | `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
 | `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
 | `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
+| `bash D3_linux_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_linux_setup.sh tools` | 下载全部工具 |
 | `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
 | `bash D3_linux_setup.sh model_zoo` | 下载最新版本算法模型库 |
@@ -244,8 +268,6 @@ bash D3_linux_setup.sh all
 | `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
 | `bash D3_linux_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_linux_setup.sh list_version` | 查看可用版本号 |
-| `bash D3_linux_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_linux_setup.sh build_image` | 编译最新版本系统镜像 |
 | `bash D3_linux_setup.sh build_image <version>` | 编译指定版本系统镜像 |
 
@@ -317,7 +339,7 @@ bash D3_debian_setup.sh build_rootfs
 bash D3_debian_setup.sh build_image
 ```
 
-其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#Upgrade)。
+其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#6-固件升级)。
 
 ### 5.2 Linux SDK
 
@@ -326,11 +348,11 @@ bash D3_debian_setup.sh build_image
 bash D3_linux_setup.sh build_image
 ```
 
-其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#Upgrade)。
+其中 `SourceCode/project/image/output/images/UsbUpgradePackage` 目录生成的 `SgsUsbUpgrade.bin` 为 USB 升级固件，升级方法详见[固件升级](#6-固件升级)。
 
 ---
 
-## 6. 固件升级 <a id="Upgrade"></a>
+## 6. 固件升级
 
 ### 6.1 硬件接线
 
@@ -342,7 +364,19 @@ bash D3_linux_setup.sh build_image
 4. 将 HDMI 数据线一端接入开发板 CONH1 HDMI 接口，另一端接入显示屏。
 5. 开发板 CONG1 RJ45 GE0 网口接入网线，确保开发板与 PC 连接至同一网段。
 
-### 6.2 进入 USB 升级模式
+### 6.2 串口接线
+
+串口是嵌入式开发的基础调试手段，可在无网络或系统未启动时使用。以 MobaXterm 为例：
+
+1. 开发板 JPO1 DBG 接口依次连接杜邦线、USB-TTL 串口转换板、USB 延长线、Linux PC。
+
+    ![](mymedia/board-serial-uart.png)
+
+2. 打开 MobaXterm 工具，依次点击 Session、Serial，Serial Port 根据设备管理器选择（如 COM4），Speed (bps) 选择 115200，最后点击 OK 连接串口。
+
+    ![](mymedia/mobaxterm.png)
+
+### 6.3 进入 USB 升级模式
 
 根据 eMMC 当前状态，选择对应方式让开发板进入 USB 升级模式：
 

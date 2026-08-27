@@ -19,35 +19,57 @@
 
 The [Git Web](https://git.sigmastar.com.cn:9090/user/login) platform's accounts are integrated with the Sigmastar Comake community (`https://www.comake.online`). Users must first register a Comake community account before they can log in to Git Web.
 
-> **Note**: This platform is read-only for external users and **does not support creating personal repositories or directly committing code**.
+> [!NOTE]
+> This platform is read-only for external users and **does not support creating personal repositories or directly committing code**.
 
 ### 1.3 Comake Pi D3
 
-Comake Pi D3 is a **video edge computing development board designed for edge-side AI applications**. Its core compute module is built around the SigmaStar SCM8003G main control chip and uses the standard 260-Pin SO-DIMM gold-finger package. Key specifications are as follows:
+Comake Pi D3 is a **video edge computing development board designed for edge-side AI applications**. Its core compute module is built around the SigmaStar SCM8003G main control chip and uses the standard 260-Pin SO-DIMM gold-finger package. Detailed hardware specifications are listed below.
 
-| Item | Specification |
-|------|---------------|
-| SoC | SCM8003G, 6-core ARM Cortex-A55, up to 1.8GHz |
-| AI Engine | 8 TOPS IPU (supports INT4/8/16, FP16/BF16) |
-| Video Analytics | IVE intelligent video engine (30+ operators) |
-| Security Engine | AES/RSA/SM2–4 (Chinese cryptographic standards), Secure Boot, TrustZone |
-| Memory | LPDDR4X, 2GB / 4GB (optional configurations), up to 3200 Mbps |
-| Storage | 64GB eMMC 5.0 |
-| Video Decoding | H.264/H.265, up to 2 channels 8K@30fps; JPEG 4K@25fps × 2 |
-| Video Encoding | H.264 1080P@30fps; JPEG 4K@30fps |
-| Display | HDMI 4K@30 + MIPI DSI 2560×1600@60 + VGA 1920×1200@60, supports dual independent displays |
-| Audio | Stereo ADC + DAC; I2S 8 channels + DMIC 8 channels |
-| Network | Dual gigabit Ethernet (baseboard requires external PHY) |
-| USB | 1× USB 3.0 DRD + 4× USB 2.0 |
-| PCIe | Dual PCIe 2.0, 2-Lane per channel, 5 GT/s |
-| SATA | Dual SATA 3.0, 6 Gbps |
-| Dimensions | 70.0mm × 45.0mm, typical power consumption ≤ 7W |
+#### 1.3.1 Main Board Interface Module Diagram
 
-#### 1.3.1 Board Interfaces
+![](mymedia/board-main.svg)
 
-![Main board interfaces](mymedia/board-main.svg)
+#### 1.3.2 Base Board Interface Module Diagram
 
-![Baseboard interfaces](mymedia/board-base.svg)
+![](mymedia/board-base.svg)
+
+#### 1.3.3 Interface Overview
+
+| Interface (Module) | Name | Specification | Purpose (Peripherals) |
+| --- | --- | --- | --- |
+| SCM8003G | Main SoC | Six-core ARM Cortex-A55, up to 1.8GHz | Provides core compute and control capability for the device, targeting edge-side AI/NVR applications |
+| CXDB5CBAM-MA-B | DDR Memory | LPDDR4X, total capacity 4GB | Provides high-speed runtime memory for the SCM8003G SoC |
+| JPO1 DBG | Debug UART Interface | 4-pin debug UART header, TTL level, baud rate 115200 | Standard debug serial port of the development board, communicates with the PC serial port for low-level firmware flashing, debugging, and logging (Dupont wires, USB-TTL serial converter, USB extension cable, Linux PC) |
+| CONV1 12V DC | Power Connector | DC 12V power input | DC power input for the development board (DC 12V power adapter) |
+| CONU8 USB2.0+USB3.0 | USB Interface | USB 2.0 port + USB 3.0 port | Used for firmware flashing and system upgrades over the fastboot protocol (USB male-to-male cable) |
+| CON11 USB2.0*2 | USB Interface | Two USB 2.0 ports | Operates the desktop system and mounts USB drives (mouse, keyboard, USB drive) |
+| CONH1 HDMI | HDMI Interface | HDMI Type-A output interface | High-definition multimedia output for connecting a monitor and displaying the Ubuntu desktop, supporting visual operation and UI debugging (HDMI cable, monitor) |
+| CONG1 RJ45 GE0 | Gigabit Ethernet Port | RJ45 interface, supports 10 / 100 / 1000 Mbps | Connects to the network, supports network communication and remote debugging for high-speed data transfer (Ethernet cable) |
+| CONG2 RJ45 GE1 | Gigabit Ethernet Port | RJ45 interface, supports 10 / 100 / 1000 Mbps | Connects to the network, supports network communication and remote debugging for high-speed data transfer (Ethernet cable) |
+| J13 FAN CON | Fan Interface | PWM-controlled fan, default 5V, optionally 12V | Connects a cooling fan, regulating speed via PWM for heat dissipation (fan) |
+| SDC2 TF Socket | TF Card Slot | Micro SD card slot | Inserts a TF card to expand storage and boot the system (TF card) |
+| CON8 MIPI Panel | MIPI Interface | MIPI DSI output interface | Connects a MIPI panel to output the Ubuntu desktop (FPC flat cable, MIPI panel) |
+| CON9 TP CON | Touch Interface | FPC touch interface, default left-side pin order | Connects a touch screen for touch input and UI interaction (FPC flat cable, touch screen) |
+| J7 SATA PWR | SATA Power Interface | SATA hard drive power interface | Provides power to a SATA hard drive (SATA power cable) |
+| CONS4 SATA | SATA Interface | Supports SATA gen3 | Connects a SATA hard drive for storage expansion (SATA hard drive) |
+| CONP2 PCIE CON | PCIe Connector | PCIe gen2×2 | Connects PCIe devices for high-speed peripheral expansion (PCIe expansion card) |
+| JPF6 USB BOOT | USB Boot Jumper | 2-pin USB boot jumper | Insert a jumper to force USB boot mode for blank-chip flashing or firmware recovery (jumper) |
+| J1 RTC PWR | RTC Battery Jumper | 2-pin RTC power jumper | Connects an RTC battery to maintain the system clock after power loss (RTC battery) |
+| JP2 30P Expansion Header | 30P Expansion Header | 30-pin expansion pin header | Routes signals such as GPIO for peripheral expansion (Dupont wires, expansion modules) |
+| JP1 40P Expansion | 40P Expansion Header | 40-pin expansion pin header | Routes signals such as GPIO for peripheral expansion (Dupont wires, expansion modules) |
+| JPF9 USB2.0 PWR | USB2.0 Power Jumper | USB2.0 VBUS power jumper for CONU8 | Insert a jumper when configured as HOST to power a Device (jumper) |
+| JPF8 USB3.0 PWR | USB3.0 Power Jumper | USB3.0 VBUS power jumper for CONU8 | Insert a jumper when configured as HOST to power a Device (jumper) |
+| CON10 SPK_R | Speaker Interface (Right Channel) | Analog audio output interface | Outputs the right-channel audio signal to drive a speaker (speaker) |
+| CON4 SPK_L | Speaker Interface (Left Channel) | Analog audio output interface | Outputs the left-channel audio signal to drive a speaker (speaker) |
+| CON24 MIC1 | Microphone Interface | Analog audio input interface | Captures audio signals input to the system for voice recording and communication (microphone) |
+| CON23 MIC0 | Microphone Interface | Analog audio input interface | Captures audio signals input to the system for voice recording and communication (microphone) |
+| J4 mSATA | mSATA Interface | mSATA drive interface | Connects an mSATA drive for storage expansion (mSATA drive) |
+| CN1 M.2 B-KEY 2230 | M.2 B-Key Connector | PCIe 2.0×2 + USB 2.0 | Provides PCIe 2.0×2 for an NVMe SSD 2230 drive and one pair of USB 2.0 for a 4G module EM05-CN (NVMe SSD, 4G module) |
+| JZ2 DMIC | DMIC Interface | 4-channel DMIC, supports up to 8 DMICs | Connects digital microphones for audio capture (DMIC) |
+| JW1 IPEX | IPEX Connector | Wi-Fi antenna IPEX connector | Connects a Wi-Fi antenna (Wi-Fi antenna) |
+| UW2 USB-Wifi | USB Wi-Fi Module Interface | Reserved USB Wi-Fi module, connects SSW105AT, USB P0 defaults to Type-A | Connects a USB Wi-Fi module for wireless networking (USB Wi-Fi module) |
+| CN4 NANO-SIM CON | NANO-SIM Card Slot | NANO-SIM card slot | Inserts a SIM card for use with the M.2 4G module (SIM card) |
 
 ---
 
@@ -164,6 +186,7 @@ Directory structure after running `all`:
 
 | Command | Description |
 |---------|-------------|
+| `bash D3_debian_setup.sh list_version` | View available version numbers |
 | `bash D3_debian_setup.sh all` | One-click download of all resources for the latest version |
 | `bash D3_debian_setup.sh all <version>` | One-click download of all resources for a specified version |
 | `bash D3_debian_setup.sh docker` | Download the latest Docker image |
@@ -171,6 +194,7 @@ Directory structure after running `all`:
 | `bash D3_debian_setup.sh sdk_toolchains` | Download the cross-compilation toolchain |
 | `bash D3_debian_setup.sh sdk` | Download the latest SDK source code |
 | `bash D3_debian_setup.sh sdk <version>` | Download the SDK source code for a specified version |
+| `bash D3_debian_setup.sh list_tools` | View the list of available tools |
 | `bash D3_debian_setup.sh tools` | Download all tools |
 | `bash D3_debian_setup.sh tools <tool_name>` | Download a single tool |
 | `bash D3_debian_setup.sh model_zoo` | Download the latest algorithm model library |
@@ -178,8 +202,6 @@ Directory structure after running `all`:
 | `bash D3_debian_setup.sh docs` | Download the latest documentation |
 | `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
 | `bash D3_debian_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_debian_setup.sh list_version` | View available version numbers |
-| `bash D3_debian_setup.sh list_tools` | View the list of available tools |
 | `bash D3_debian_setup.sh build_rootfs` | Build the latest Ubuntu root filesystem |
 | `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
 | `bash D3_debian_setup.sh build_image` | Build the latest system image |
@@ -229,6 +251,7 @@ Directory structure after running `all`:
 
 | Command | Description |
 |---------|-------------|
+| `bash D3_linux_setup.sh list_version` | View available version numbers |
 | `bash D3_linux_setup.sh all` | One-click download of all resources for the latest version |
 | `bash D3_linux_setup.sh all <version>` | One-click download of all resources for a specified version |
 | `bash D3_linux_setup.sh docker` | Download the latest Docker image |
@@ -238,6 +261,7 @@ Directory structure after running `all`:
 | `bash D3_linux_setup.sh sdk <version>` | Download the SDK source code for a specified version |
 | `bash D3_linux_setup.sh image` | Download the latest firmware image for flashing |
 | `bash D3_linux_setup.sh image <version>` | Download the firmware image for a specified version |
+| `bash D3_linux_setup.sh list_tools` | View the list of available tools |
 | `bash D3_linux_setup.sh tools` | Download all tools |
 | `bash D3_linux_setup.sh tools <tool_name>` | Download a single tool |
 | `bash D3_linux_setup.sh model_zoo` | Download the latest algorithm model library |
@@ -245,8 +269,6 @@ Directory structure after running `all`:
 | `bash D3_linux_setup.sh docs` | Download the latest documentation |
 | `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
 | `bash D3_linux_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_linux_setup.sh list_version` | View available version numbers |
-| `bash D3_linux_setup.sh list_tools` | View the list of available tools |
 | `bash D3_linux_setup.sh build_image` | Build the latest system image |
 | `bash D3_linux_setup.sh build_image <version>` | Build the system image for a specified version |
 
@@ -318,7 +340,7 @@ bash D3_debian_setup.sh build_rootfs
 bash D3_debian_setup.sh build_image
 ```
 
-The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#Upgrade) for the upgrade method.
+The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#6-firmware-upgrade) for the upgrade method.
 
 ### 5.2 Linux SDK
 
@@ -327,11 +349,11 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 bash D3_linux_setup.sh build_image
 ```
 
-The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#Upgrade) for the upgrade method.
+The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images/UsbUpgradePackage` directory is the USB upgrade firmware. See [Firmware Upgrade](#6-firmware-upgrade) for the upgrade method.
 
 ---
 
-## 6. Firmware Upgrade <a id="Upgrade"></a>
+## 6. Firmware Upgrade
 
 ### 6.1 Hardware Wiring
 
@@ -343,7 +365,19 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 4. Connect one end of an HDMI cable to the board's CONH1 HDMI port, and the other end to a display.
 5. Connect a network cable to the board's CONG1 RJ45 GE0 network port, making sure the board and the PC are connected to the same subnet.
 
-### 6.2 Enter USB Upgrade Mode
+### 6.2 Serial Connection <a id=serial></a>
+
+The serial port is the most basic debugging method for embedded development. It can be used when there is no network or when the system has not yet booted. The example below uses MobaXterm:
+
+1. Connect the development board's JPO1 DBG interface to the PC through Dupont wires, a USB-TTL serial converter, and a USB extension cable in sequence.
+
+    ![](mymedia/board-serial-uart.png)
+
+2. Open MobaXterm, click Session and then Serial. Choose the Serial Port according to the Device Manager (e.g., COM4) and set Speed (bps) to 115200. Click OK to open the serial connection.
+
+    ![](mymedia/mobaxterm.png)
+
+### 6.3 Enter USB Upgrade Mode
 
 Depending on the current state of the eMMC, choose the corresponding method to put the board into USB upgrade mode:
 
