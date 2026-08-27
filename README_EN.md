@@ -129,7 +129,7 @@ After registering an account on the [Comake community](https://www.comake.online
 3. Set Git global username and email:
 
         git config --global user.name "your username"
-        git config --global user.email "your email@example.com"
+        git config --global user.email "your email"
 
 ---
 

@@ -129,7 +129,7 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 3. 设置 Git 全局用户名和邮箱：
 
         git config --global user.name "你的用户名"
-        git config --global user.email "你的邮箱@example.com"
+        git config --global user.email "你的邮箱"
 
 ---
 
