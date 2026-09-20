@@ -201,10 +201,24 @@ bash D3_debian_setup.sh all
 | `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
 | `bash D3_debian_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_debian_setup.sh build_rootfs` | 构建最新版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build_rootfs <version>` | 构建指定版本 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build_image` | 编译最新版本系统镜像 |
-| `bash D3_debian_setup.sh build_image <version>` | 编译指定版本系统镜像 |
+| `bash D3_debian_setup.sh build_rootfs` | 使用对应 SDK 版本的 Docker 镜像构建 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_rootfs <version>` | 使用指定版本的 Docker 镜像构建 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_image` | 使用对应 SDK 版本的 Docker 镜像编译系统镜像 |
+| `bash D3_debian_setup.sh build_image <version>` | 使用指定版本的 Docker 镜像编译系统镜像 |
+
+**使用 `latest` 参数：**
+
+将 `latest` 作为 `<version>` 传入，可获取开发中的最新代码，而非固定的发布版本：
+
+| 命令 | `latest` 行为 |
+|------|--------------|
+| `bash D3_debian_setup.sh all latest` | 一键下载最新全部资源 |
+| `bash D3_debian_setup.sh docker latest` | 下载最新 Docker 镜像 |
+| `bash D3_debian_setup.sh sdk latest` | 下载最新 SDK 源码 |
+| `bash D3_debian_setup.sh model_zoo latest` | 下载最新算法模型库 |
+| `bash D3_debian_setup.sh docs latest` | 下载最新版本文档（与不传 `<version>` 等效） |
+| `bash D3_debian_setup.sh build_rootfs latest` | 使用最新 Docker 镜像构建 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_image latest` | 使用最新 Docker 镜像编译系统镜像 |
 
 ### 3.3 Linux SDK
 
@@ -268,10 +282,24 @@ bash D3_linux_setup.sh all
 | `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
 | `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
 | `bash D3_linux_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_linux_setup.sh build_image` | 编译最新版本系统镜像 |
-| `bash D3_linux_setup.sh build_image <version>` | 编译指定版本系统镜像 |
+| `bash D3_linux_setup.sh build_image` | 使用对应 SDK 版本的 Docker 镜像编译系统镜像 |
+| `bash D3_linux_setup.sh build_image <version>` | 使用指定版本的 Docker 镜像编译系统镜像 |
 
 > **与 Debian SDK 的主要差异：** Linux SDK 多了 `image` 命令可直接下载预编译固件镜像，无需本地编译。
+
+**使用 `latest` 参数：**
+
+将 `latest` 作为 `<version>` 传入，可获取开发中的最新代码，而非固定的发布版本：
+
+| 命令 | `latest` 行为 |
+|------|--------------|
+| `bash D3_linux_setup.sh all latest` | 一键下载最新全部资源 |
+| `bash D3_linux_setup.sh docker latest` | 下载最新 Docker 镜像 |
+| `bash D3_linux_setup.sh sdk latest` | 下载最新 SDK 源码 |
+| `bash D3_linux_setup.sh image latest` | 下载最新版本烧录固件（与不传 `<version>` 等效） |
+| `bash D3_linux_setup.sh model_zoo latest` | 下载最新算法模型库 |
+| `bash D3_linux_setup.sh docs latest` | 下载最新版本文档（与不传 `<version>` 等效） |
+| `bash D3_linux_setup.sh build_image latest` | 使用最新 Docker 镜像编译系统镜像 |
 
 ---
 
@@ -399,13 +427,13 @@ bash D3_linux_setup.sh build_image
 
 - **强制升级**：在JPF6 USB BOOT 插上跳帽（硬件连接图标记⑥），开发板即强制进入 USB 启动模式。可用于异常状态下的强制升级恢复。升级完成后需要拔掉跳帽才可正常使用。
 
-### 6.3 整包固件升级
+### 6.4 整包固件升级
 
 打开 "UsbDevelopToolUI.exe" --> "固件升级"，选中 `SourceCode/project/image/output/images/UsbUpgradePackage` 下生成的 `SgsUsbUpgrade.bin`，点击 "开始升级"。
 
 ![固件升级](mymedia/full.png)
 
-### 6.4 单分区升级
+### 6.5 单分区升级
 
 1. 打开 “UsbDevelopToolUI.exe” --> “高级”，解包原固件。
 
@@ -416,7 +444,7 @@ bash D3_linux_setup.sh build_image
 
     ![](mymedia/single.png)
 
-### 6.5 验证
+### 6.6 验证
 
 **Debian SDK：** 升级完成后，显示器将显示 Ubuntu 桌面登录界面。
 

@@ -202,10 +202,24 @@ Directory structure after running `all`:
 | `bash D3_debian_setup.sh docs` | Download the latest documentation |
 | `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
 | `bash D3_debian_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_debian_setup.sh build_rootfs` | Build the latest Ubuntu root filesystem |
-| `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem for a specified version |
-| `bash D3_debian_setup.sh build_image` | Build the latest system image |
-| `bash D3_debian_setup.sh build_image <version>` | Build the system image for a specified version |
+| `bash D3_debian_setup.sh build_rootfs` | Build the Ubuntu root filesystem using the Docker image of the corresponding SDK version |
+| `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem using the Docker image of a specified version |
+| `bash D3_debian_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK version |
+| `bash D3_debian_setup.sh build_image <version>` | Build the system image using the Docker image of a specified version |
+
+**Using the `latest` Parameter:**
+
+Pass `latest` as `<version>` to fetch the latest code under development instead of a pinned release version:
+
+| Command | `latest` behavior |
+|---------|-------------------|
+| `bash D3_debian_setup.sh all latest` | One-click download of all resources for the latest version |
+| `bash D3_debian_setup.sh docker latest` | Download the latest Docker image |
+| `bash D3_debian_setup.sh sdk latest` | Download the latest SDK source code |
+| `bash D3_debian_setup.sh model_zoo latest` | Download the latest algorithm model library |
+| `bash D3_debian_setup.sh docs latest` | Download the latest documentation (equivalent to omitting `<version>`) |
+| `bash D3_debian_setup.sh build_rootfs latest` | Build the Ubuntu root filesystem using the latest Docker image |
+| `bash D3_debian_setup.sh build_image latest` | Build the system image using the latest Docker image |
 
 ### 3.3 Linux SDK
 
@@ -269,10 +283,24 @@ Directory structure after running `all`:
 | `bash D3_linux_setup.sh docs` | Download the latest documentation |
 | `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
 | `bash D3_linux_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_linux_setup.sh build_image` | Build the latest system image |
-| `bash D3_linux_setup.sh build_image <version>` | Build the system image for a specified version |
+| `bash D3_linux_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK version |
+| `bash D3_linux_setup.sh build_image <version>` | Build the system image using the Docker image of a specified version |
 
 > **Main difference from the Debian SDK:** The Linux SDK adds an `image` command that lets you directly download a precompiled firmware image, with no local compilation required.
+
+**Using the `latest` Parameter:**
+
+Pass `latest` as `<version>` to fetch the latest code under development instead of a pinned release version:
+
+| Command | `latest` behavior |
+|---------|-------------------|
+| `bash D3_linux_setup.sh all latest` | One-click download of all resources for the latest version |
+| `bash D3_linux_setup.sh docker latest` | Download the latest Docker image |
+| `bash D3_linux_setup.sh sdk latest` | Download the latest SDK source code |
+| `bash D3_linux_setup.sh image latest` | Download the latest firmware image for flashing (equivalent to omitting `<version>`) |
+| `bash D3_linux_setup.sh model_zoo latest` | Download the latest algorithm model library |
+| `bash D3_linux_setup.sh docs latest` | Download the latest documentation (equivalent to omitting `<version>`) |
+| `bash D3_linux_setup.sh build_image latest` | Build the system image using the latest Docker image |
 
 ---
 
@@ -365,7 +393,7 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 4. Connect one end of an HDMI cable to the board's CONH1 HDMI port, and the other end to a display.
 5. Connect a network cable to the board's CONG1 RJ45 GE0 network port, making sure the board and the PC are connected to the same subnet.
 
-### 6.2 Serial Connection <a id=serial></a>
+### 6.2 Serial Connection
 
 The serial port is the most basic debugging method for embedded development. It can be used when there is no network or when the system has not yet booted. The example below uses MobaXterm:
 
@@ -400,13 +428,13 @@ Depending on the current state of the eMMC, choose the corresponding method to p
 
 - **Forced upgrade**: Put a jumper cap on the JPF6 USB BOOT header (marked ⑥ in the hardware connection diagram), and the board will be forced into USB boot mode. This can be used for forced upgrade and recovery in abnormal states. After the upgrade, remove the jumper cap before normal use.
 
-### 6.3 Full Firmware Package Upgrade
+### 6.4 Full Firmware Package Upgrade
 
 Open "UsbDevelopToolUI.exe" --> "Firmware Upgrade", select the `SgsUsbUpgrade.bin` generated under `SourceCode/project/image/output/images/UsbUpgradePackage`, and click "Start Upgrade".
 
 ![Firmware Upgrade](mymedia/full_en.png)
 
-### 6.4 Single-Partition Upgrade
+### 6.5 Single-Partition Upgrade
 
 1. Open "UsbDevelopToolUI.exe" --> "Advanced" and unpack the original firmware.
 
@@ -417,7 +445,7 @@ Open "UsbDevelopToolUI.exe" --> "Firmware Upgrade", select the `SgsUsbUpgrade.bi
 
     ![](mymedia/single_en.png)
 
-### 6.5 Verification
+### 6.6 Verification
 
 **Debian SDK:** After the upgrade completes, the display will show the Ubuntu desktop login screen.
 
