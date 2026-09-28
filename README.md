@@ -185,26 +185,26 @@ bash D3_debian_setup.sh all
 
 | 命令 | 说明 |
 |------|------|
-| `bash D3_debian_setup.sh list_version` | 查看可用版本号 |
-| `bash D3_debian_setup.sh all` | 一键下载最新版本全部资源 |
-| `bash D3_debian_setup.sh all <version>` | 一键下载指定版本全部资源 |
-| `bash D3_debian_setup.sh docker` | 下载最新版本 Docker 镜像 |
-| `bash D3_debian_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
+| `bash D3_debian_setup.sh list_version` | 查看可用发布版本号 |
+| `bash D3_debian_setup.sh all` | 一键下载最新发布版本全部资源 |
+| `bash D3_debian_setup.sh all <version>` | 一键下载指定发布版本全部资源 |
+| `bash D3_debian_setup.sh docker` | 下载最新发布版本 Docker 镜像 |
+| `bash D3_debian_setup.sh docker <version>` | 下载指定发布版本 Docker 镜像 |
 | `bash D3_debian_setup.sh sdk_toolchains` | 下载交叉编译工具链 |
-| `bash D3_debian_setup.sh sdk` | 下载最新版本 SDK 源码 |
-| `bash D3_debian_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
+| `bash D3_debian_setup.sh sdk` | 下载最新发布版本 SDK 源码 |
+| `bash D3_debian_setup.sh sdk <version>` | 下载指定发布版本 SDK 源码 |
 | `bash D3_debian_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_debian_setup.sh tools` | 下载全部工具 |
 | `bash D3_debian_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_debian_setup.sh model_zoo` | 下载最新版本算法模型库 |
-| `bash D3_debian_setup.sh model_zoo <version>` | 下载指定版本算法模型库 |
-| `bash D3_debian_setup.sh docs` | 下载最新版本文档 |
-| `bash D3_debian_setup.sh docs <version>` | 下载指定版本文档 |
+| `bash D3_debian_setup.sh model_zoo` | 下载最新发布版本算法模型库 |
+| `bash D3_debian_setup.sh model_zoo <version>` | 下载指定发布版本算法模型库 |
+| `bash D3_debian_setup.sh docs` | 下载最新发布版本文档 |
+| `bash D3_debian_setup.sh docs <version>` | 下载指定发布版本文档 |
 | `bash D3_debian_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_debian_setup.sh build_rootfs` | 使用对应 SDK 版本的 Docker 镜像构建 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build_rootfs <version>` | 使用指定版本的 Docker 镜像构建 Ubuntu 根文件系统 |
-| `bash D3_debian_setup.sh build_image` | 使用对应 SDK 版本的 Docker 镜像编译系统镜像 |
-| `bash D3_debian_setup.sh build_image <version>` | 使用指定版本的 Docker 镜像编译系统镜像 |
+| `bash D3_debian_setup.sh build_rootfs` | 使用对应 SDK 发布版本的 Docker 镜像构建 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_rootfs <version>` | 使用指定发布版本的 Docker 镜像构建 Ubuntu 根文件系统 |
+| `bash D3_debian_setup.sh build_image` | 使用对应 SDK 发布版本的 Docker 镜像编译系统镜像 |
+| `bash D3_debian_setup.sh build_image <version>` | 使用指定发布版本的 Docker 镜像编译系统镜像 |
 
 **使用 `latest` 参数：**
 
@@ -216,7 +216,7 @@ bash D3_debian_setup.sh all
 | `bash D3_debian_setup.sh docker latest` | 下载最新 Docker 镜像 |
 | `bash D3_debian_setup.sh sdk latest` | 下载最新 SDK 源码 |
 | `bash D3_debian_setup.sh model_zoo latest` | 下载最新算法模型库 |
-| `bash D3_debian_setup.sh docs latest` | 下载最新版本文档（与不传 `<version>` 等效） |
+| `bash D3_debian_setup.sh docs latest` | 下载最新发布版本文档（与不传 `<version>` 等效） |
 | `bash D3_debian_setup.sh build_rootfs latest` | 使用最新 Docker 镜像构建 Ubuntu 根文件系统 |
 | `bash D3_debian_setup.sh build_image latest` | 使用最新 Docker 镜像编译系统镜像 |
 
@@ -264,26 +264,26 @@ bash D3_linux_setup.sh all
 
 | 命令 | 说明 |
 |------|------|
-| `bash D3_linux_setup.sh list_version` | 查看可用版本号 |
-| `bash D3_linux_setup.sh all` | 一键下载最新版本全部资源 |
-| `bash D3_linux_setup.sh all <version>` | 一键下载指定版本全部资源 |
-| `bash D3_linux_setup.sh docker` | 下载最新版本 Docker 镜像 |
-| `bash D3_linux_setup.sh docker <version>` | 下载指定版本 Docker 镜像 |
+| `bash D3_linux_setup.sh list_version` | 查看可用发布版本号 |
+| `bash D3_linux_setup.sh all` | 一键下载最新发布版本全部资源 |
+| `bash D3_linux_setup.sh all <version>` | 一键下载指定发布版本全部资源 |
+| `bash D3_linux_setup.sh docker` | 下载最新发布版本 Docker 镜像 |
+| `bash D3_linux_setup.sh docker <version>` | 下载指定发布版本 Docker 镜像 |
 | `bash D3_linux_setup.sh sdk_toolchains` | 下载交叉编译工具链 |
-| `bash D3_linux_setup.sh sdk` | 下载最新版本 SDK 源码 |
-| `bash D3_linux_setup.sh sdk <version>` | 下载指定版本 SDK 源码 |
-| `bash D3_linux_setup.sh image` | 下载最新版本烧录固件 |
-| `bash D3_linux_setup.sh image <version>` | 下载指定版本烧录固件 |
+| `bash D3_linux_setup.sh sdk` | 下载最新发布版本 SDK 源码 |
+| `bash D3_linux_setup.sh sdk <version>` | 下载指定发布版本 SDK 源码 |
+| `bash D3_linux_setup.sh image` | 下载最新发布版本烧录固件 |
+| `bash D3_linux_setup.sh image <version>` | 下载指定发布版本烧录固件 |
 | `bash D3_linux_setup.sh list_tools` | 查看可用工具列表 |
 | `bash D3_linux_setup.sh tools` | 下载全部工具 |
 | `bash D3_linux_setup.sh tools <tool_name>` | 下载单个工具 |
-| `bash D3_linux_setup.sh model_zoo` | 下载最新版本算法模型库 |
-| `bash D3_linux_setup.sh model_zoo <version>` | 下载指定版本算法模型库 |
-| `bash D3_linux_setup.sh docs` | 下载最新版本文档 |
-| `bash D3_linux_setup.sh docs <version>` | 下载指定版本文档 |
+| `bash D3_linux_setup.sh model_zoo` | 下载最新发布版本算法模型库 |
+| `bash D3_linux_setup.sh model_zoo <version>` | 下载指定发布版本算法模型库 |
+| `bash D3_linux_setup.sh docs` | 下载最新发布版本文档 |
+| `bash D3_linux_setup.sh docs <version>` | 下载指定发布版本文档 |
 | `bash D3_linux_setup.sh hw_ref_design` | 下载硬件参考设计资料 |
-| `bash D3_linux_setup.sh build_image` | 使用对应 SDK 版本的 Docker 镜像编译系统镜像 |
-| `bash D3_linux_setup.sh build_image <version>` | 使用指定版本的 Docker 镜像编译系统镜像 |
+| `bash D3_linux_setup.sh build_image` | 使用对应 SDK 发布版本的 Docker 镜像编译系统镜像 |
+| `bash D3_linux_setup.sh build_image <version>` | 使用指定发布版本的 Docker 镜像编译系统镜像 |
 
 > **与 Debian SDK 的主要差异：** Linux SDK 多了 `image` 命令可直接下载预编译固件镜像，无需本地编译。
 
@@ -296,9 +296,9 @@ bash D3_linux_setup.sh all
 | `bash D3_linux_setup.sh all latest` | 一键下载最新全部资源 |
 | `bash D3_linux_setup.sh docker latest` | 下载最新 Docker 镜像 |
 | `bash D3_linux_setup.sh sdk latest` | 下载最新 SDK 源码 |
-| `bash D3_linux_setup.sh image latest` | 下载最新版本烧录固件（与不传 `<version>` 等效） |
+| `bash D3_linux_setup.sh image latest` | 下载最新发布版本烧录固件（与不传 `<version>` 等效） |
 | `bash D3_linux_setup.sh model_zoo latest` | 下载最新算法模型库 |
-| `bash D3_linux_setup.sh docs latest` | 下载最新版本文档（与不传 `<version>` 等效） |
+| `bash D3_linux_setup.sh docs latest` | 下载最新发布版本文档（与不传 `<version>` 等效） |
 | `bash D3_linux_setup.sh build_image latest` | 使用最新 Docker 镜像编译系统镜像 |
 
 ---
@@ -387,7 +387,7 @@ bash D3_linux_setup.sh build_image
 <img src="mymedia/board-connect.png" style="zoom: 35%">
 
 1. 开发板 CONV1 12V DC 电源接口接入 DC 12V 电源适配器。
-2. 将双公头 USB 数据线一端接入开发板 CONU8 USB2.0 接口（黑色），另一端接入 PC。
+2. 将双公头 USB 数据线一端接入开发板 CONU8 USB3.0 接口（蓝色），另一端接入 PC。
 3. 开发板任意 CON11 USB2.0 接口接入鼠标。
 4. 将 HDMI 数据线一端接入开发板 CONH1 HDMI 接口，另一端接入显示屏。
 5. 开发板 CONG1 RJ45 GE0 网口接入网线，确保开发板与 PC 连接至同一网段。

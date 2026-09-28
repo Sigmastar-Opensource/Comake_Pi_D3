@@ -186,26 +186,26 @@ Directory structure after running `all`:
 
 | Command | Description |
 |---------|-------------|
-| `bash D3_debian_setup.sh list_version` | View available version numbers |
-| `bash D3_debian_setup.sh all` | One-click download of all resources for the latest version |
-| `bash D3_debian_setup.sh all <version>` | One-click download of all resources for a specified version |
-| `bash D3_debian_setup.sh docker` | Download the latest Docker image |
-| `bash D3_debian_setup.sh docker <version>` | Download the Docker image for a specified version |
+| `bash D3_debian_setup.sh list_version` | View available release version numbers |
+| `bash D3_debian_setup.sh all` | Download the latest release version of all resources in one step |
+| `bash D3_debian_setup.sh all <version>` | Download all resources of a specific release version in one step |
+| `bash D3_debian_setup.sh docker` | Download the latest release version of the Docker image |
+| `bash D3_debian_setup.sh docker <version>` | Download a specified release version of the Docker image |
 | `bash D3_debian_setup.sh sdk_toolchains` | Download the cross-compilation toolchain |
-| `bash D3_debian_setup.sh sdk` | Download the latest SDK source code |
-| `bash D3_debian_setup.sh sdk <version>` | Download the SDK source code for a specified version |
+| `bash D3_debian_setup.sh sdk` | Download the latest release version of the SDK source code |
+| `bash D3_debian_setup.sh sdk <version>` | Download a specified release version of the SDK source code |
 | `bash D3_debian_setup.sh list_tools` | View the list of available tools |
 | `bash D3_debian_setup.sh tools` | Download all tools |
 | `bash D3_debian_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_debian_setup.sh model_zoo` | Download the latest algorithm model library |
-| `bash D3_debian_setup.sh model_zoo <version>` | Download the algorithm model library for a specified version |
-| `bash D3_debian_setup.sh docs` | Download the latest documentation |
-| `bash D3_debian_setup.sh docs <version>` | Download the documentation for a specified version |
+| `bash D3_debian_setup.sh model_zoo` | Download the latest release version of the algorithm model library |
+| `bash D3_debian_setup.sh model_zoo <version>` | Download a specified release version of the algorithm model library |
+| `bash D3_debian_setup.sh docs` | Download the latest release version of the documentation |
+| `bash D3_debian_setup.sh docs <version>` | Download a specified release version of the documentation |
 | `bash D3_debian_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_debian_setup.sh build_rootfs` | Build the Ubuntu root filesystem using the Docker image of the corresponding SDK version |
-| `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem using the Docker image of a specified version |
-| `bash D3_debian_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK version |
-| `bash D3_debian_setup.sh build_image <version>` | Build the system image using the Docker image of a specified version |
+| `bash D3_debian_setup.sh build_rootfs` | Build the Ubuntu root filesystem using the Docker image of the corresponding SDK release version |
+| `bash D3_debian_setup.sh build_rootfs <version>` | Build the Ubuntu root filesystem using the Docker image of a specified release version |
+| `bash D3_debian_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK release version |
+| `bash D3_debian_setup.sh build_image <version>` | Build the system image using the Docker image of a specified release version |
 
 **Using the `latest` Parameter:**
 
@@ -213,11 +213,11 @@ Pass `latest` as `<version>` to fetch the latest code under development instead 
 
 | Command | `latest` behavior |
 |---------|-------------------|
-| `bash D3_debian_setup.sh all latest` | One-click download of all resources for the latest version |
+| `bash D3_debian_setup.sh all latest` | Download the latest of all resources in one step |
 | `bash D3_debian_setup.sh docker latest` | Download the latest Docker image |
 | `bash D3_debian_setup.sh sdk latest` | Download the latest SDK source code |
 | `bash D3_debian_setup.sh model_zoo latest` | Download the latest algorithm model library |
-| `bash D3_debian_setup.sh docs latest` | Download the latest documentation (equivalent to omitting `<version>`) |
+| `bash D3_debian_setup.sh docs latest` | Download the latest release version of the documentation (equivalent to omitting `<version>`) |
 | `bash D3_debian_setup.sh build_rootfs latest` | Build the Ubuntu root filesystem using the latest Docker image |
 | `bash D3_debian_setup.sh build_image latest` | Build the system image using the latest Docker image |
 
@@ -265,26 +265,26 @@ Directory structure after running `all`:
 
 | Command | Description |
 |---------|-------------|
-| `bash D3_linux_setup.sh list_version` | View available version numbers |
-| `bash D3_linux_setup.sh all` | One-click download of all resources for the latest version |
-| `bash D3_linux_setup.sh all <version>` | One-click download of all resources for a specified version |
-| `bash D3_linux_setup.sh docker` | Download the latest Docker image |
-| `bash D3_linux_setup.sh docker <version>` | Download the Docker image for a specified version |
+| `bash D3_linux_setup.sh list_version` | View available release version numbers |
+| `bash D3_linux_setup.sh all` | Download the latest release version of all resources in one step |
+| `bash D3_linux_setup.sh all <version>` | Download all resources of a specific release version in one step |
+| `bash D3_linux_setup.sh docker` | Download the latest version of the Docker image |
+| `bash D3_linux_setup.sh docker <version>` | Download a specified release version of the Docker image |
 | `bash D3_linux_setup.sh sdk_toolchains` | Download the cross-compilation toolchain |
-| `bash D3_linux_setup.sh sdk` | Download the latest SDK source code |
-| `bash D3_linux_setup.sh sdk <version>` | Download the SDK source code for a specified version |
-| `bash D3_linux_setup.sh image` | Download the latest firmware image for flashing |
-| `bash D3_linux_setup.sh image <version>` | Download the firmware image for a specified version |
+| `bash D3_linux_setup.sh sdk` | Download the latest release version of the SDK source code |
+| `bash D3_linux_setup.sh sdk <version>` | Download a specified release version of the SDK source code |
+| `bash D3_linux_setup.sh image` | Download the latest release version of the flashing firmware |
+| `bash D3_linux_setup.sh image <version>` | Download a specified release version of the flashing firmware |
 | `bash D3_linux_setup.sh list_tools` | View the list of available tools |
 | `bash D3_linux_setup.sh tools` | Download all tools |
 | `bash D3_linux_setup.sh tools <tool_name>` | Download a single tool |
-| `bash D3_linux_setup.sh model_zoo` | Download the latest algorithm model library |
-| `bash D3_linux_setup.sh model_zoo <version>` | Download the algorithm model library for a specified version |
-| `bash D3_linux_setup.sh docs` | Download the latest documentation |
-| `bash D3_linux_setup.sh docs <version>` | Download the documentation for a specified version |
+| `bash D3_linux_setup.sh model_zoo` | Download the latest release version of the algorithm model library |
+| `bash D3_linux_setup.sh model_zoo <version>` | Download a specified release version of the algorithm model library |
+| `bash D3_linux_setup.sh docs` | Download the latest release version of the documentation |
+| `bash D3_linux_setup.sh docs <version>` | Download a specified release version of the documentation |
 | `bash D3_linux_setup.sh hw_ref_design` | Download hardware reference design materials |
-| `bash D3_linux_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK version |
-| `bash D3_linux_setup.sh build_image <version>` | Build the system image using the Docker image of a specified version |
+| `bash D3_linux_setup.sh build_image` | Build the system image using the Docker image of the corresponding SDK release version |
+| `bash D3_linux_setup.sh build_image <version>` | Build the system image using the Docker image of a specified release version |
 
 > **Main difference from the Debian SDK:** The Linux SDK adds an `image` command that lets you directly download a precompiled firmware image, with no local compilation required.
 
@@ -294,12 +294,12 @@ Pass `latest` as `<version>` to fetch the latest code under development instead 
 
 | Command | `latest` behavior |
 |---------|-------------------|
-| `bash D3_linux_setup.sh all latest` | One-click download of all resources for the latest version |
+| `bash D3_linux_setup.sh all latest` | Download the latest of all resources in one step |
 | `bash D3_linux_setup.sh docker latest` | Download the latest Docker image |
 | `bash D3_linux_setup.sh sdk latest` | Download the latest SDK source code |
-| `bash D3_linux_setup.sh image latest` | Download the latest firmware image for flashing (equivalent to omitting `<version>`) |
+| `bash D3_linux_setup.sh image latest` | Download the latest release version of the flashing firmware (equivalent to omitting `<version>`) |
 | `bash D3_linux_setup.sh model_zoo latest` | Download the latest algorithm model library |
-| `bash D3_linux_setup.sh docs latest` | Download the latest documentation (equivalent to omitting `<version>`) |
+| `bash D3_linux_setup.sh docs latest` | Download the latest release version of the documentation (equivalent to omitting `<version>`) |
 | `bash D3_linux_setup.sh build_image latest` | Build the system image using the latest Docker image |
 
 ---
@@ -388,7 +388,7 @@ The `SgsUsbUpgrade.bin` generated in the `SourceCode/project/image/output/images
 <img src="mymedia/board-connect.png" style="zoom: 35%">
 
 1. Connect the board's CONV1 12V DC power connector to a DC 12V power adapter.
-2. Connect one end of a dual-male USB cable to the board's CONU8 USB 2.0 port (black), and the other end to the PC.
+2. Connect one end of a dual-male USB cable to the board's CONU8 USB 3.0 port (blue), and the other end to the PC.
 3. Connect a mouse to any CON11 USB 2.0 port on the board.
 4. Connect one end of an HDMI cable to the board's CONH1 HDMI port, and the other end to a display.
 5. Connect a network cable to the board's CONG1 RJ45 GE0 network port, making sure the board and the PC are connected to the same subnet.
