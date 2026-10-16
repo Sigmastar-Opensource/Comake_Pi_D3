@@ -42,8 +42,8 @@ Comake Pi D3 is a **video edge computing development board designed for edge-sid
 | CXDB5CBAM-MA-B | DDR Memory | LPDDR4X, total capacity 4GB | Provides high-speed runtime memory for the SCM8003G SoC |
 | JPO1 DBG | Debug UART Interface | 4-pin debug UART header, TTL level, baud rate 115200 | Standard debug serial port of the development board, communicates with the PC serial port for low-level firmware flashing, debugging, and logging (Dupont wires, USB-TTL serial converter, USB extension cable, Linux PC) |
 | CONV1 12V DC | Power Connector | DC 12V power input | DC power input for the development board (DC 12V power adapter) |
-| CONU8 USB2.0+USB3.0 | USB Interface | USB 2.0 port + USB 3.0 port | Used for firmware flashing and system upgrades over the fastboot protocol (USB male-to-male cable) |
-| CON11 USB2.0*2 | USB Interface | Two USB 2.0 ports | Operates the desktop system and mounts USB drives (mouse, keyboard, USB drive) |
+| CONU8 USB2.0+USB3.0 | USB Interface | USB 2.0 port + USB 3.0 port | The upper USB2.0 port maps to USB P2 and the lower USB3.0 port maps to USB P3, both in Host mode by default; P2 and P3 both support OTG dual-role switching (Host/Device), and after switching to Device mode, used for firmware flashing and system upgrades over the fastboot protocol (USB male-to-male cable, connected to the lower USB3.0 port) |
+| CON11 USB2.0*2 | USB Interface | Two USB 2.0 ports | The upper USB2.0 port maps to USB P0 and the lower USB2.0 port maps to USB P1, both Host-only; used to operate the desktop system and mount USB drives (mouse, keyboard, USB drive) |
 | CONH1 HDMI | HDMI Interface | HDMI Type-A output interface | High-definition multimedia output for connecting a monitor and displaying the Ubuntu desktop, supporting visual operation and UI debugging (HDMI cable, monitor) |
 | CONG1 RJ45 GE0 | Gigabit Ethernet Port | RJ45 interface, supports 10 / 100 / 1000 Mbps | Connects to the network, supports network communication and remote debugging for high-speed data transfer (Ethernet cable) |
 | CONG2 RJ45 GE1 | Gigabit Ethernet Port | RJ45 interface, supports 10 / 100 / 1000 Mbps | Connects to the network, supports network communication and remote debugging for high-speed data transfer (Ethernet cable) |
@@ -65,7 +65,7 @@ Comake Pi D3 is a **video edge computing development board designed for edge-sid
 | CON24 MIC1 | Microphone Interface | Analog audio input interface | Captures audio signals input to the system for voice recording and communication (microphone) |
 | CON23 MIC0 | Microphone Interface | Analog audio input interface | Captures audio signals input to the system for voice recording and communication (microphone) |
 | J4 mSATA | mSATA Interface | mSATA drive interface | Connects an mSATA drive for storage expansion (mSATA drive) |
-| CN1 M.2 B-KEY 2230 | M.2 B-Key Connector | PCIe 2.0×2 + USB 2.0 | Provides PCIe 2.0×2 for an NVMe SSD 2230 drive and one pair of USB 2.0 for a 4G module EM05-CN (NVMe SSD, 4G module) |
+| CN1 M.2 B-KEY 2230 | M.2 B-Key Connector | PCIe 2.0×2 + USB 2.0 | Provides PCIe 2.0×2 for an NVMe SSD 2230 drive and one pair of USB 2.0 (occupies USB2.0 P1, multiplexed with the lower USB2.0 port of CON11, defaults to CON11) for a 4G module EM05-CN (NVMe SSD, 4G module) |
 | JZ2 DMIC | DMIC Interface | 4-channel DMIC, supports up to 8 DMICs | Connects digital microphones for audio capture (DMIC) |
 | JW1 IPEX | IPEX Connector | Wi-Fi antenna IPEX connector | Connects a Wi-Fi antenna (Wi-Fi antenna) |
 | UW2 USB-Wifi | USB Wi-Fi Module Interface | Reserved USB Wi-Fi module, connects SSW105AT, USB P0 defaults to Type-A | Connects a USB Wi-Fi module for wireless networking (USB Wi-Fi module) |

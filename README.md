@@ -42,8 +42,8 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 | CXDB5CBAM-MA-B | DDR 内存 | LPDDR4X，总容量 4GB | 为 SCM8003G 主控提供高速运行内存 |
 | JPO1 DBG | Debug UART 接口 | 4pin 调试排针，TTL 电平，波特率 115200 | 开发板标准调试串口，与计算机串口通信，用于底层固件烧录、调试、日志记录（杜邦线、USB-TTL 串口转换板、USB 延长线、Linux PC） |
 | CONV1 12V DC | 电源接口 | DC 12V 直流电源输入 | 为开发板提供直流电源输入（DC 12V 电源适配器） |
-| CONU8 USB2.0+USB3.0 | USB 接口 | USB 2.0 接口 + USB 3.0 接口 | 通过 fastboot 协议进行固件烧录与系统升级（双公头 USB 数据线） |
-| CON11 USB2.0*2 | USB 接口 | 2 个 USB 2.0 接口 | 操作桌面系统、挂载 U 盘（鼠标、键盘、U 盘） |
+| CONU8 USB2.0+USB3.0 | USB 接口 | USB 2.0 接口 + USB 3.0 接口 | 上层 USB2.0 接口对应 USB P2，默认 Host 模式；下层 USB3.0 接口对应 USB P3，默认 Host 模式；P2/P3 均支持 OTG 双角色切换（Host/Device），切换为 Device 模式后，通过 fastboot 协议进行固件烧录与系统升级（双公头 USB 数据线，接下层 USB3.0 接口） |
+| CON11 USB2.0*2 | USB 接口 | 2 个 USB 2.0 接口 | 上层 USB2.0 接口对应 USB P0，下层 USB2.0 接口对应 USB P1，均只支持 Host 模式；用于操作桌面系统、挂载 U 盘（鼠标、键盘、U 盘） |
 | CONH1 HDMI | HDMI 接口 | HDMI Type-A 输出接口 | 高清多媒体输出，连接显示器输出 Ubuntu 桌面，支持可视化操作与界面调试（HDMI 数据线、显示屏） |
 | CONG1 RJ45 GE0 | 千兆以太网口 | RJ45 接口，支持 10 / 100 / 1000Mbps | 连接网络，支持网络通信与远程调试，实现高速数据传输（网线） |
 | CONG2 RJ45 GE1 | 千兆以太网口 | RJ45 接口，支持 10 / 100 / 1000Mbps | 连接网络，支持网络通信与远程调试，实现高速数据传输（网线） |
@@ -65,7 +65,7 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 | CON24 MIC1 | 麦克风接口 | 模拟音频输入接口 | 采集音频信号输入系统，用于语音录入与通话（麦克风） |
 | CON23 MIC0 | 麦克风接口 | 模拟音频输入接口 | 采集音频信号输入系统，用于语音录入与通话（麦克风） |
 | J4 mSATA | mSATA 接口 | mSATA 硬盘接口 | 连接 mSATA 硬盘进行存储扩展（mSATA 硬盘） |
-| CN1 M.2 B-KEY 2230 | M.2 B-Key 连接器 | PCIe 2.0×2 + USB 2.0 | 包含 PCIe 2.0×2 可接 NVMe SSD 2230 硬盘，并提供一对 USB 2.0 可接 4G 模块 EM05-CN（NVMe SSD、4G 模块） |
+| CN1 M.2 B-KEY 2230 | M.2 B-Key 连接器 | PCIe 2.0×2 + USB 2.0 | 包含 PCIe 2.0×2 可接 NVMe SSD 2230 硬盘，并提供一对 USB 2.0（占用 USB2.0 P1 口，与 CON11 下层 USB2.0 接口复用，默认 P1 接至 CON11）可接 4G 模块 EM05-CN（NVMe SSD、4G 模块） |
 | JZ2 DMIC | DMIC 接口 | 4ch DMIC，最多支持 8 颗 DMIC | 连接数字麦克风采集音频输入（DMIC） |
 | JW1 IPEX | IPEX 座子 | Wi-Fi 天线 IPEX 座子 | 连接 Wi-Fi 天线（Wi-Fi 天线） |
 | UW2 USB-Wifi | USB Wi-Fi 模组接口 | 预留 USB Wi-Fi 模组，接 SSW105AT，USB P0 默认做 Type-A | 接入 USB Wi-Fi 模组实现无线网络（USB Wi-Fi 模组） |
