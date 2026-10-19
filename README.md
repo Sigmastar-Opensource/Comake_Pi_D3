@@ -42,7 +42,7 @@ Comake Pi D3 是一块 **面向端边侧 AI 应用的视频边缘计算开发板
 | CXDB5CBAM-MA-B | DDR 内存 | LPDDR4X，总容量 4GB | 为 SCM8003G 主控提供高速运行内存 |
 | JPO1 DBG | Debug UART 接口 | 4pin 调试排针，TTL 电平，波特率 115200 | 开发板标准调试串口，与计算机串口通信，用于底层固件烧录、调试、日志记录（杜邦线、USB-TTL 串口转换板、USB 延长线、Linux PC） |
 | CONV1 12V DC | 电源接口 | DC 12V 直流电源输入 | 为开发板提供直流电源输入（DC 12V 电源适配器） |
-| CONU8 USB2.0+USB3.0 | USB 接口 | USB 2.0 接口 + USB 3.0 接口 | 上层 USB2.0 接口对应 USB P2，默认 Host 模式；下层 USB3.0 接口对应 USB P3，默认 Host 模式；P2/P3 均支持 OTG 双角色切换（Host/Device），切换为 Device 模式后，通过 fastboot 协议进行固件烧录与系统升级（双公头 USB 数据线，接下层 USB3.0 接口） |
+| CONU8 USB2.0+USB3.0 | USB 接口 | USB 2.0 接口 + USB 3.0 接口 | 上层 USB2.0 接口对应 USB P2，默认 Host 模式；下层 USB3.0 接口对应 USB P3，默认 Host 模式；P2/P3 均支持 DRD 双角色软件切换 Host/Device（系统运行时默认 Host）；固件烧录与系统升级接下层 USB3.0 接口，进入 U-Boot 执行 sgsusb 或空片 USB 启动时 P3 自动切换为 Device 模式，通过 fastboot 协议进行固件烧录与系统升级（双公头 USB 数据线） |
 | CON11 USB2.0*2 | USB 接口 | 2 个 USB 2.0 接口 | 上层 USB2.0 接口对应 USB P0，下层 USB2.0 接口对应 USB P1，均只支持 Host 模式；用于操作桌面系统、挂载 U 盘（鼠标、键盘、U 盘） |
 | CONH1 HDMI | HDMI 接口 | HDMI Type-A 输出接口 | 高清多媒体输出，连接显示器输出 Ubuntu 桌面，支持可视化操作与界面调试（HDMI 数据线、显示屏） |
 | CONG1 RJ45 GE0 | 千兆以太网口 | RJ45 接口，支持 10 / 100 / 1000Mbps | 连接网络，支持网络通信与远程调试，实现高速数据传输（网线） |
